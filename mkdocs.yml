@@ -1,0 +1,6 @@
+site_name: Web Security
+pages:
+- [index.md, Home]
+- [help.md, Help]
+- [about.md, About]
+theme: readthedocs
