@@ -1,6 +1,10 @@
 site_name: Web Security
 pages:
 - [index.md, Home]
+- ['content/XSS/Non-persistent-XSS.md', 'XSS', 'Non-persistent XSS']
+- ['content/XSS/Persistent-XSS.md', 'XSS', 'Persistent XSS']
+- ['content/XSS/DOM-Based-XSS.md', 'XSS', 'DOM Based XSS']
 - [help.md, Help]
 - [about.md, About]
-theme: readthedocs
+theme: yeti
+repo_url: https://github.com/acgotaku/WebSecurity
