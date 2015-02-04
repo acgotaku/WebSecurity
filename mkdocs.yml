@@ -7,5 +7,6 @@ pages:
 - ['content/XSS/DOM-Based-XSS.md', 'XSS', 'DOM Based XSS']
 - [help.md, Help]
 - [about.md, About]
-theme: yeti
+theme: united
 repo_url: https://github.com/acgotaku/WebSecurity
+copyright: Copyright &copy; 2015, <a href="https://github.com/acgotaku/WebSecurity">CSS WebSecurity</a>.
