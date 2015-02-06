@@ -2,7 +2,7 @@ site_name: Web Security
 pages:
 - [index.md, Home]
 - ['content/XSS/Overview.md', 'XSS', 'XSS']
-- ['content/XSS/Non-persistent-XSS.md', 'XSS', 'Non-persistent XSS']
+- ['content/XSS/XSS-Cookie.md', 'XSS', 'Stealing Cookie With XSS']
 - ['content/XSS/Persistent-XSS.md', 'XSS', 'Persistent XSS']
 - ['content/XSS/DOM-Based-XSS.md', 'XSS', 'DOM Based XSS']
 - [help.md, Help]
