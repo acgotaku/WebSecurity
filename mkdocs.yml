@@ -3,8 +3,7 @@ pages:
 - [index.md, Home]
 - ['content/XSS/Overview.md', 'XSS', 'XSS']
 - ['content/XSS/XSS-Cookie.md', 'XSS', 'Stealing Cookie With XSS']
-- ['content/XSS/Persistent-XSS.md', 'XSS', 'Persistent XSS']
-- ['content/XSS/DOM-Based-XSS.md', 'XSS', 'DOM Based XSS']
+- ['content/XSS/CSS-history-hack.md', 'XSS', 'CSS History Hack']
 - [help.md, Help]
 - [about.md, About]
 theme: united
