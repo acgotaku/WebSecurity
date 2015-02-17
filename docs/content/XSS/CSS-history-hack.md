@@ -103,6 +103,12 @@ CSS中有四个伪类用来定义链接的样式，分别是：a:link、a:visite
 
 CSS History Hack的防范属于浏览器安全的范畴，目前各大主流浏览器都已经通过限制getComputedStyle这个API封住了这个漏洞。
 
+如下图所示：
+
+![CSS hack](img/CSS-3.png)
+
+尽管CSS可以区分网站是否访问，但是JavaScript却无法获取到正常的返回值。无论是否访问过的URL，返回的color都是未访问的。
+
 ##参考
 
 [Privacy and the :visited selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Privacy_and_the_:visited_selector)

@@ -4,6 +4,7 @@ pages:
 - ['content/XSS/Overview.md', 'XSS', 'XSS']
 - ['content/XSS/XSS-Cookie.md', 'XSS', 'Stealing Cookie With XSS']
 - ['content/XSS/CSS-history-hack.md', 'XSS', 'CSS History Hack']
+- ['content/XSS/XSS-Worm.md', 'XSS', 'XSS Worm']
 - [help.md, Help]
 - [about.md, About]
 theme: united
