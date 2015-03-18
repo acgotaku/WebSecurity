@@ -17,13 +17,13 @@
 这一策略是极其重要的，试想如果没有同源策略，可能 a.com 的一段 JavaScript 脚本，在 b.com 未曾加载此脚本时，也可以随意涂改 b.com 的页面（在浏览器的显示中）。为了不让浏览器的页面行为发生混乱，浏览器提出了“Origin”（源）这一概念，来自不同 Origin的对象无法互相干扰。
 对于JavaScript来说，以下情况被认为是同源与不同源的：
 
-|| *URL* || *OutCome* || *Reason* ||
-|| http://test.icehoney.me/test1.html || Success ||  ||
-|| http://test.icehoney.me/dir1/test2.html || Success ||  ||
-|| https://test.icehoney.me/secure.html || Failure || Different protocol ||
-|| http://test.icehoney.me:81/secure.html || Failure || Different port ||
-|| http://blog.icehoney.me/secure.html || Failure || Different host ||
-
+URL                                     | OutCome              | Reason 
+--------------------------------------- | -------------------- | ------------------------
+http://test.icehoney.me/test1.html      | Success              |                          
+http://test.icehoney.me/dir1/test2.html | Success              |  
+https://test.icehoney.me/secure.html    | Failure              | Different protocol                
+http://test.icehoney.me:81/secure.html  | Failure              | Different port
+http://blog.icehoney.me/secure.html     | Failure              | Different host
 
 ##Link Style
  

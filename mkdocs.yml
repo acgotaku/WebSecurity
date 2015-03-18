@@ -6,6 +6,7 @@ pages:
 - ['content/XSS/CSS-history-hack.md', 'XSS', 'CSS History Hack']
 - ['content/XSS/XSS-Worm.md', 'XSS', 'XSS Worm']
 - ['content/XSS/XSS-Defense.md', 'XSS', 'XSS Defense']
+- ['content/Browser_Security/Same-Origin-Policy.md', 'Browser Security', 'Same Origin Policy']
 - [help.md, Help]
 - [about.md, About]
 theme: united

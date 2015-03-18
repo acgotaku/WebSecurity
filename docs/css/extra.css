@@ -1,3 +1,6 @@
+body {
+font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+}
 div.col-md-9 h1:first-of-type {
     text-align: center;
     font-size: 60px;
@@ -5,4 +8,14 @@ div.col-md-9 h1:first-of-type {
 }
 div.col-md-9 p:first-of-type {
     text-align: center;
+}
+table{
+	width: 100%;
+	margin-bottom: 20px;
+}
+table>thead>tr>th, table>tbody>tr>th, table>tfoot>tr>th, table>thead>tr>td, table>tbody>tr>td, table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.428571429;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
 }
