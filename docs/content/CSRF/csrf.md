@@ -24,17 +24,22 @@ Third-party Cookie在生成时就会被指定一个Expire值，这就是Cookie�
 一些人认为CSRF攻击只能由GET请求发起，只要把重要的操作改成只允许POST请求，就能防止CSRF攻击。但是对于很多网站的应用来说，一些重要操作并未严格区分GET与
 POST，攻击者可以使用GET来请求表单的提交地址。
 如：
+![POST CODE1](img/POST_1.png)
      <form action=”/login” id=”login” method=”post”>
      <input type=text name=”username” value=””/>
      <input type=password name=”password” value=””/>
      <input type=submit name=”submit” value=”submit”/>
      </form>
+     
 用户可以尝试构造一个GET请求：
+
 http://localhost/login?username=a&password=a
 
 如果服务器端已经区分了GET和POST，这样攻击者可以构造一个POST请求。
 最简单的方法是在一个页面中构造一个form表单，然后使用JavaScript自动提交这个表单。
 攻击者在www.attack.com/attack.html 中编写如下代码：
+
+![POST CODE1](img/POST_2.png)
      <form action=”http://www.target,com/login” id=”login” method=”post”>
      <input type=text name=”username” value=””/>
      <input type=password name=”password” value=””/>
