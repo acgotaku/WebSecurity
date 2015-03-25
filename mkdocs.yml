@@ -8,6 +8,7 @@ pages:
 - ['content/XSS/XSS-Defense.md', 'XSS', 'XSS Defense']
 - ['content/Browser_Security/Same-Origin-Policy.md', 'Browser Security', 'Same Origin Policy']
 - ['content/CSRF/csrf.md', 'CSRF', 'CSRF']
+- ['content/Web_framework/Overview.md', 'Web框架安全', 'Web框架安全概述']
 - [help.md, Help]
 - [about.md, About]
 theme: united
