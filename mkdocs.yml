@@ -7,6 +7,7 @@ pages:
 - ['content/XSS/XSS-Worm.md', 'XSS', 'XSS Worm']
 - ['content/XSS/XSS-Defense.md', 'XSS', 'XSS Defense']
 - ['content/Browser_Security/Same-Origin-Policy.md', 'Browser Security', 'Same Origin Policy']
+- ['content/Browser_Security/Browser-Sandbox.md', 'Browser Security', 'Browser Sandbox']
 - ['content/CSRF/csrf.md', 'CSRF', 'CSRF']
 - ['content/Web_framework/Overview.md', 'Web框架安全', 'Web框架安全概述']
 - [help.md, Help]
