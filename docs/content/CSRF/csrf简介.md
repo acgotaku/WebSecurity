@@ -7,6 +7,10 @@ Cross Site Request Forgery
 
 ![Classic CSRF attack](img/csrf attack.png)
 
+所以，要完成一次CSRF攻击，必须要经历两个步骤:
+ 1.登陆受信任网站A，并在本地生成Cookie；
+ 2.在不登出A的情况下，访问危险网站B。
+ 
 ##浏览器的Cookie策略
 
 攻击者通过实施CSRF攻击之所以能够成功，是因为攻击者通过用户的浏览器成功发送了Cookie的缘故。
