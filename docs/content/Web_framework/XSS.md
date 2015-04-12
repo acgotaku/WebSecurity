@@ -1,8 +1,10 @@
-# 模板引擎与XSS防御 #
+# XSS防御
+模板引擎与XSS防御    
 
 ---
 ## **防御方法** #
-在View层，可以解决XSS问题。XSS攻击实在用户的浏览器上执行的。其形成过程则是在服务器端页面渲染时，注入了恶意 的HTML代码导致的。从MVC架构来说，是发生在View层，因此可以使用“输出编码”的方式来防御，即针对不同上下文的XSS攻击场景，使用不同的编码方式。    
+在View层，可以解决XSS问题。XSS攻击实在用户的浏览器上执行的。其形成过程则是在服务器端页面渲染时，注入了恶意 的HTML代码导致的。从MVC架构来说，是发生在View层，因此可以使用“**输出编码**”的方式来防御，即针对不同上下文的XSS攻击场景，使用不同的编码方式。    
+
 “输出编码”的防御方法可以总结为以下几种：      
 
 * 在HTML标签中输出变量     
@@ -39,11 +41,13 @@ Django Templates 同时支持 auto-escape，符合 Secure by Default 原则。�
         {% endautoescape %}
     
 为了方便，很多程序员可能会选择关闭 auto-escape。要检查 auto-escape 是否被关闭也很简单，搜索代码里是否出现上面两种情况即可。    
+
 但是如前文所述，最好的XSS防御方案，在不同的场景需要使用不同的编码函数。如果统一使用者5个字符的HTMLEncode， 则很可能会被攻击者绕过。由此看来，这种 auto-escape 的方案也不是很完善。   
 
 ---
 ## **Velocity 与 XSS 防御** #
 在模板引擎Velocity中，也提供了类似的机制，但有所不同的是，Velocity 默认是没有开启 HtmlEncode 的。   
+
 在 Velocity 中，可以通过 Event Handler 来进行 HTMLEncode。    
     
         eventhandler.referenceinsertion.class = org.apache.velocity.app.event.implement.
