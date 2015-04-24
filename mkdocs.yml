@@ -1,6 +1,8 @@
 site_name: Web Security
 pages:
 - [index.md, Home]
+#- [help.md, Help]
+#- [about.md, About]
 - ['content/XSS/Overview.md', 'XSS', 'XSS']
 - ['content/XSS/XSS-Cookie.md', 'XSS', 'Stealing Cookie With XSS']
 - ['content/XSS/CSS-history-hack.md', 'XSS', 'CSS History Hack']
@@ -9,6 +11,7 @@ pages:
 - ['content/Browser_Security/Same-Origin-Policy.md', 'Browser Security', 'Same Origin Policy']
 - ['content/Browser_Security/Browser-Sandbox.md', 'Browser Security', 'Browser Sandbox']
 - ['content/Browser_Security/Malicious-URL-interception.md', 'Browser Security', 'Malicious URL interception']
+- ['content/Web_Server_Sercurity/Web-Server-Sercurity.md', Web服务配置安全]
 - ['content/SQL_injection/Overview.md', 'SQL_injection', 'Overview']
 - ['content/SQL_injection/SQL_injection.md', 'SQL_injection', 'SQL_injection']
 - ['content/SQL_injection/SQL_injection defence.md', 'SQL_injection', 'SQL_injection defence']
@@ -16,8 +19,7 @@ pages:
 - ['content/Web_framework/Overview.md', 'Web框架安全', 'Web框架安全概述']
 - ['content/Web_framework/XSS.md', 'Web框架安全', '模板引擎与XSS防御']
 - ['content/Web_framework/csrf.md', 'Web框架安全', 'Web框架与CSRF防御']
-- [help.md, Help]
-- [about.md, About]
+
 theme: united
 repo_url: https://github.com/acgotaku/WebSecurity
 copyright: Copyright &copy; 2015, <a href="https://github.com/acgotaku/WebSecurity">CSS WebSecurity</a>.
