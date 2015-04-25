@@ -57,3 +57,6 @@ Referer字段存在于HTTP头中，它记录了该HTTP请求的来源地址。�
 在URL中原先参数的基础上增加一个参数Token。Token值使用足够安全的随机数生成算法。
 
  http://localhost/login?username=a&password=a&token=[random(seed)]
+ 
+使用随机数生成算法后取得的Token值只能由用户和服务器共同持有，不能被第三者所知晓。因此，由于Token的存在，攻击者无法再构造出一个完整的URL实施CSRF攻击。
+Token需要同时放在表单和Session中。在提交请求时，服务器只需验证表单中的Token，与用户Session中的Token是否一致，如果一致，则认为是合法请求；如果不一致，或者有一个为空，则认为请求不合法。
