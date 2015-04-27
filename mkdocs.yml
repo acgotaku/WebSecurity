@@ -17,11 +17,11 @@ pages:
 - ['content/SQL_injection/SQL_injection defence.md', 'SQL_injection', 'SQL_injection defence']
 - ['content/CSRF/Overview.md', 'CSRF', 'CSRF']
   ['content/CSRF/CSRF Attack.md', 'CSRF', 'CSRF Attack']
-  ['content/CSRF/CSRF Defense.md', 'CSRF', 'CSRF Defense']
+  ['content/CSRF/CSRF Defenruosong-040se.md', 'CSRF', 'CSRF Defense']
 - ['content/Web_framework/Overview.md', 'Web框架安全', 'Web框架安全概述']
 - ['content/Web_framework/XSS.md', 'Web框架安全', '模板引擎与XSS防御']
 - ['content/Web_framework/csrf.md', 'Web框架安全', 'Web框架与CSRF防御']
-
+- ['content/DOS/Overviewed.md', '拒绝服务攻击', 'DOS攻击原理']
 theme: united
 repo_url: https://github.com/acgotaku/WebSecurity
 copyright: Copyright &copy; 2015, <a href="https://github.com/acgotaku/WebSecurity">CSS WebSecurity</a>.
