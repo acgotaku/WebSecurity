@@ -1,5 +1,6 @@
 # Welcome to Web Security
 
-For usgae documentation visit [Help](help).
+Web是互联网的核心
 
-For markdown documentation visit [markdown](http://wowubuntu.com/markdown/)
+---
+
