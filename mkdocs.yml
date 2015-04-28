@@ -21,9 +21,16 @@ pages:
 - ['content/Web_framework/Overview.md', 'Web框架安全', 'Web框架安全概述']
 - ['content/Web_framework/XSS.md', 'Web框架安全', '模板引擎与XSS防御']
 - ['content/Web_framework/csrf.md', 'Web框架安全', 'Web框架与CSRF防御']
+<<<<<<< HEAD
 - ['content/DOS/Overviewed.md', '拒绝服务攻击', 'DOS攻击原理']
 - ['content/DOS/general-dos.md', '拒绝服务攻击', '通用的DoS攻击技术']
 
+=======
+- ['content/Access_Control/Overview.md', 'Access_Control', 'Access_Control']
+- ['content/Access_Control/DAC.md', 'Access_Control', 'DAC']
+- ['content/Access_Control/MAC.md', 'Access_Control', 'MAC']
+- ['content/Access_Control/RBAC.md', 'Access_Control', 'RBAC']
+>>>>>>> aec0ad3ae181138d08cc71c629dcd355eeaa4a98
 theme: united
 repo_url: https://github.com/acgotaku/WebSecurity
 copyright: Copyright &copy; 2015, <a href="https://github.com/acgotaku/WebSecurity">CSS WebSecurity</a>.
