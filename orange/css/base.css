@@ -127,3 +127,10 @@ hr {
     text-align: center;
     font-weight: 200;
 }
+
+@media (min-width: 1200px){
+.navbar>.container{
+    padding: 0px;
+    width: 1200px;
+    }
+}

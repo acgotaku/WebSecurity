@@ -20,5 +20,5 @@ table>thead>tr>th, table>tbody>tr>th, table>tfoot>tr>th, table>thead>tr>td, tabl
 	border-top: 1px solid #ddd;
 }
 .navbar>.container .navbar-brand {
-  margin-left: -100px;
+  margin-left: -95px;
 }
