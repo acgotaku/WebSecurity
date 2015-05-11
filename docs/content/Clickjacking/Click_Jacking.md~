@@ -34,6 +34,6 @@ touchend，手指离开屏幕时发生；
 touchmove，手指滑动时发生；  
 touchcancel，系统可取消touch事件；  
 通过将一个不可见的iframe覆盖到当前网页上，可以劫持用户的触屏操作。  
-![TapJacking](img/TapJacking.jpg)  
+![TapJacking](img/TapJacking.png)  
 而手机的屏幕范围有限，手机浏览器为了节约空间，甚至掩藏了地址栏，因此手机上的视觉欺骗可能会变得更加容易实施。  
 
