@@ -10,15 +10,12 @@ div.col-md-9 p:first-of-type {
     text-align: center;
 }
 table{
-	width: 100%;
-	margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 table>thead>tr>th, table>tbody>tr>th, table>tfoot>tr>th, table>thead>tr>td, table>tbody>tr>td, table>tfoot>tr>td {
-	padding: 8px;
-	line-height: 1.428571429;
-	vertical-align: top;
-	border-top: 1px solid #ddd;
-}
-.navbar>.container .navbar-brand {
-  margin-left: -95px;
+    padding: 8px;
+    line-height: 1.428571429;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
 }

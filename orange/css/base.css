@@ -133,4 +133,11 @@ hr {
     padding: 0px;
     width: 1200px;
     }
+.navbar>.container .navbar-brand {
+    margin-left: -90px;
+    position:fixed;
+    }
+.container>.navbar-collapse{
+    margin-left: 50px;
+    }
 }
