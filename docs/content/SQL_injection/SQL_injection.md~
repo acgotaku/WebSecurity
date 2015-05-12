@@ -17,23 +17,14 @@ Structured Query Language Injection
 
 以书籍零售商使用的Web应用程序为例，该应用程序允许用户根据作者、书名、出版商等信息搜索产品。  
 当一个用户搜索Wiley出版的所有书籍时，应用程序执行以下查询：  
-
-		SELECT author ,title, year FROM books WHERE publisher = ‘ Wiley’ and published = 1  
-
+SELECT author ,title, year FROM books WHERE publisher = ‘ Wiley’ and published = 1  
 分析：在这个查询中，等号左边的词由SQL关键字，表和数据库列名称构成。这个部分的全部内容由程序员在创建应用程序时建立。当然表达式Wiley由用户提交，它是一个数据项。SQL查询中的字符串数据必须包含在单引号内，与查询的其他内容分隔开来。  
-漏洞一：
-
-		SELECT author ,title, year FROM books WHERE publisher = ‘O’Reilly’ and published = 1 
- 
+漏洞一：SELECT author ,title, year FROM books WHERE publisher = ‘O’Reilly’ and published = 1  
 在这个实例中，查询解释器以和前面一个示例相同的方式到达字符串数据位置。它解析这个包含在单引号中的数据，得到O。然后遇到Reilly’，这并不是有效的SQL语法，因此应用程序报错。  
 漏洞二：攻击者通过对查询进行修改，通过以下搜索项，返回零售商目录中的每一本书籍。  
-
-		Wiley ‘ OR 1=1--  
-
+Wiley ‘ OR 1=1--  
 此时，应用程序将执行以下的查询：  
-
-		SELECT author, title, year FROM books WHERE publisher = ‘Wiley’ OR 1=1-- ‘ and published=1  
-
+SELECT author, title, year FROM books WHERE publisher = ‘Wiley’ OR 1=1-- ‘ and published=1  
 这个查询对开发者查询中的WHERE子句进行修改，增加另外一个条件。数据库将检查书籍表中的每一行，提取published列值为Wiley或其中1=1的每条记录。因为1=1永真，所以数据库将返回书籍表中的所有记录。  
 如下图：
 

@@ -4,8 +4,8 @@ Structured Query Language Injection
 
 ---
 
-## 点击劫持的分类：
-1 flash点击劫持：  
+
+## 1 flash点击劫持
 例：clickJacking攻击：当你访问一个恶意网站的时候，攻击者可以控制你的浏览器对一些链接的访问，这个漏洞影响到几乎所有浏览器，除非你使用 lynx 一类的字符浏览器。这个漏洞与 JavaScript 无关，即使你关闭浏览器的 JavaScript 功能也无能为力。事实上这是浏览器工作原理中的一个缺陷，无法通过简单的补丁解决。一个恶意网站能让你在毫不知情的情况下点击任意链接，任意按钮或网站上任意东西。  
 如果这还不能让你恐慌的话，想想这样的情形，一个用户在被攻击的时候将毫不知情而且束手无策：  
 比如在 Ebay,因为可以嵌入 JavaScript，虽然攻击并不需要 JavaScript，但可以让攻击更容易进行。只用 lynx 字符浏览器才能保护你自己，同时不要任何动态的东西。该漏洞用到 DHTML，使用防 frame 代码可以保护你不受跨站点攻击，但攻击者仍可以强迫你点击任何链接。你所做的任何点击都被引导到恶意链接上，所以，那些 Flash 游戏将首当其冲。  
@@ -13,21 +13,23 @@ Structured Query Language Injection
 Grossman 确切表示，微软最新的 IE8 和 Mozilla 最新的 Firefox 3 均不能幸免。  
 当前，唯一的办法是禁用浏览器的脚本和插件功能。  
 
-2 图片覆盖攻击：  
+## 2 图片覆盖攻击
 页面中的logo图像被覆盖了，并指向某钓鱼网站，XSIO不同于CSS。它利用图片的style，或者能控制CSS。如果应用没有限制style的position为absolute的话，图片就可以覆盖到页面的任何位置，形成点击劫持。  
 例：百度空间  
-</table><a herf=”http://www.ph4nt0m.org”>  
-<img src=”http://img.baidu.com/hi/img/portraitn.jpg”  
-style=”position:absolute;left:123px;top:123px;”>  
-</a>  
+
+		</table><a herf=”http://www.ph4nt0m.org”>  
+		<img src=”http://img.baidu.com/hi/img/portraitn.jpg”  
+		style=”position:absolute;left:123px;top:123px;”>  
+		</a>  
+
 图片可以伪装得像一个正常的链接、按钮；或者在图片中构造一些文字，覆盖在关键的位置，就有可能完全改变页面中想表达的意思，在这种情况下，不需要用户点击，也能达到欺骗的目的。由于<img>标签在很多系统是对用户开放的，因此在现在中有很多站点存在被XSIO攻击的可能。  
 
-3拖拽劫持与数据窃取  
+## 3 拖拽劫持与数据窃取  
 目前很多浏览器都开始支持Drag & Drop 的API。对于用户来说，拖拽使他们的操作更加简单。浏览器中的拖拽对象可以是一个链接，也可以是一段文字，还可以从一个窗口拖拽到另外一个窗口，因此拖拽是不受同源策略限制的。  
 "拖拽劫持"的思路是诱使用户从隐藏的不可见iframe中"拖拽"出攻击者希望得到的数据，然后放到攻击者能控制的另外一个页面中，从而窃取数据。  
 在JavaScript或者Java API的支持下，这个攻击过程会变得非常隐蔽。因为它突破了传统ClickJacking一些先天的局限，所以这种新型的"拖拽劫持"能够造成更大的破坏。
   
-4 触屏劫持（TapJacking）  
+## 4 触屏劫持（TapJacking）  
 一次触屏操作，可能会对应一下几个事件：  
 touchstart，手指触摸屏幕时发生；  
 touchend，手指离开屏幕时发生；  

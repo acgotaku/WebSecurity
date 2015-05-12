@@ -6,43 +6,47 @@ Click Jacking Injection
 
 ##一、Frame Busting  
 通常写一段代码禁止JavaScript代码，以禁止iframe嵌套。如可写下列一段代码：  
-if(top.location!=location)  
-top.location=self.location;  
+
+		if(top.location!=location)  
+		top.location=self.location; 
+ 
 常见的Frame Busting有以下形式：  
-if (top != self)  
-if (top.location != self.location)  
-if (top.location != location)  
-if (parent.frames.length > 0)  
-if (window != top)  
-if (window.top !== window.self)  
-if (window.self != window.top)  
-if (parent && parent != window)  
-if (parent && parent.frames && parent.frames.length>0)  
-if((self.parent&&!(self.parent===self))&&(self.parent.frames.length!=0))  
-top.location = self.location  
-top.location.href = document.location.href  
-top.location.href = self.location.href  
-top.location.replace(self.location)  
-top.location.href = window.location.href  
-top.location.replace(document.location)  
-top.location.href = window.location.href  
-top.location.href = "URL"  
-document.write('')  
-top.location = location  
-top.location.replace(document.location)  
-top.location.replace('URL')  
-top.location.href = document.location  
-top.location.replace(window.location.href)  
-top.location.href = location.href  
-self.parent.location = document.location  
-parent.location.href = self.document.location  
-top.location.href = self.location  
-top.location = window.location  
-top.location.replace(window.location.pathname)  
-window.top.location = window.self.location  
-setTimeout(function(){document.body.innerHTML='';},1);  
-window.self.onload = function(evt){document.body.innerHTML='';}  
-var url = window.location.href; top.location.replace(url)  
+
+		if (top != self)  
+		if (top.location != self.location)  
+		if (top.location != location)  
+		if (parent.frames.length > 0)  
+		if (window != top)  
+		if (window.top !== window.self)  
+		if (window.self != window.top)  
+		if (parent && parent != window)  
+		if (parent && parent.frames && parent.frames.length>0)  
+		if((self.parent&&!(self.parent===self))&&(self.parent.frames.length!=0))  
+		top.location = self.location  
+		top.location.href = document.location.href  
+		top.location.href = self.location.href  
+		top.location.replace(self.location)  
+		top.location.href = window.location.href  
+		top.location.replace(document.location)  
+		top.location.href = window.location.href  
+		top.location.href = "URL"  
+		document.write('')  
+		top.location = location  
+		top.location.replace(document.location)  
+		top.location.replace('URL')  
+		top.location.href = document.location  
+		top.location.replace(window.location.href)  
+		top.location.href = location.href  
+		self.parent.location = document.location  
+		parent.location.href = self.document.location  
+		top.location.href = self.location  
+		top.location = window.location  
+		top.location.replace(window.location.pathname)  
+		window.top.location = window.self.location  
+		setTimeout(function(){document.body.innerHTML='';},1);  
+		window.self.onload = function(evt){document.body.innerHTML='';}  
+		var url = window.location.href; top.location.replace(url)  
+
 但是Frame Busting也有很多缺陷，由于它是JavaScript写的，控制能力不是特别强，因此有很多方法绕过它。  
 
 ##二、X-Frame-Options  
@@ -71,20 +75,15 @@ add_header X-Frame-Options "SAMEORIGIN";
 4、IIS配置X-FRAME-OPTIONS  
 在web站点的web.config中配置：  
   
-<system.webServer>  
+		<system.webServer>  
 
- ...  
+		 ...
 
- <httpProtocol>  
+			<httpProtocol>
+			<customHeaders>
+			<add name="X-Frame-Options" value="SAMEORIGIN" />  
+			</customHeaders>  
+			</httpProtocol>  
+		... 
 
-   <customHeaders>  
-
-     <add name="X-Frame-Options" value="SAMEORIGIN" />  
-
-   </customHeaders>  
-
- </httpProtocol>  
-
- ...  
-
-</system.webServer>  
+		</system.webServer>  
