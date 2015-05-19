@@ -1,6 +1,6 @@
 site_name: Web Security
 pages:
-#- [index.md, Home]
+- [index.md, Home]
 #- [help.md, Help]
 #- [about.md, About]
 - ['content/XSS/Overview.md', 'XSS', 'XSS']
