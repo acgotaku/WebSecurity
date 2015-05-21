@@ -1,5 +1,7 @@
 ##CSRF实验
 
+---
+
 实验环境：[MIT6.858实验](http://css.csail.mit.edu/6.858/2014/schedule.html)  Lab 5: Browser security
 
 ####受害者登陆myzoo.com.
@@ -8,13 +10,11 @@
 
 ####受害者在没有登出的情况下访问攻击网站evil1.com.
 
-![browse](img/evil.png)
+![browse](img/browse.png)
 
 ####前面两步已经满足了CSRF攻击的条件，所以结果就是攻击实现,用户网站内部zoobars丢失。
 
 ![attack](img/attack.png)
-
-##攻击介绍
 
 
 ####下面查看myzoo.com网站中transfer页面源码。
