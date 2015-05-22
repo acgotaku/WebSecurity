@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+       <title>Same Origin Policy - Web Security - Web Security</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link href="../../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Web Security</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">XSS <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../XSS/Overview">XSS</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Cookie">Stealing Cookie With XSS</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/CSS-history-hack">CSS History Hack</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Worm">XSS Worm</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Defense">XSS Defense</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browser Security <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li class="active">
+                            <a href=".">Same Origin Policy</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../Browser-Sandbox">Browser Sandbox</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../Malicious-URL-interception">Malicious URL interception</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web服务配置安全 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Web_Server_Sercurity/Web-Server-Sercurity">Web Server Sercurity</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SQL_injection <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../SQL_injection/Overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../SQL_injection/SQL_injection">SQL_injection</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../SQL_injection/SQL_injection_defence">SQL_injection defence</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clickjacking <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Clickjacking/Overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Click_Jacking">Click_Jacking</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Click_Jacking_defence">Click Jacking defence</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">CSRF <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../CSRF/Overview">CSRF</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Attack">CSRF Attack</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Defense">CSRF Defense</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web框架安全 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Web_framework/Overview">Web框架安全概述</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_framework/XSS">模板引擎与XSS防御</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_framework/csrf">Web框架与CSRF防御</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">拒绝服务攻击 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../DOS/Overviewed">DOS攻击原理</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../DOS/general-dos">通用的DoS攻击技术</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Access_Control <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Access_Control/Overview">Access_Control</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/DAC">DAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/MAC">MAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/RBAC">RBAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/Perform">Perform</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <!--
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../../XSS/XSS-Defense">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../Browser-Sandbox">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/acgotaku/WebSecurity">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+            -->
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#same-origin-policy">Same Origin Policy</a></li>
+        
+            <li><a href="#_1">同源策略基本介绍</a></li>
+        
+            <li><a href="#ajax">AJAX</a></li>
+        
+            <li><a href="#_2">跨域解决方案</a></li>
+        
+            <li><a href="#_3">总结</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main"><h1 id="same-origin-policy">Same Origin Policy</h1>
+<p>浏览器同源策略</p>
+<hr />
+<h2 id="_1">同源策略基本介绍</h2>
+<p>同源策略（Same Origin Policy）是一种约定，它是浏览器最核心也是最基本的安全功能，如果缺少了同源策略，则浏览器的正常功能可能会受到影响。可以说Web是构建在同源策略的基础之上的，浏览器只是针对同源策略的一种实现。</p>
+<p><strong>浏览器的同源策略，限制了来自不同源的“document”或脚本，对当前“document”读取或设置某些属性。</strong></p>
+<p>例如下图就是Chrome的同源策略限制：</p>
+<p><img alt="Same Origin Policy" src="../../../img/Same-Origin-Policy-1.png" /></p>
+<p>这一策略是极其重要的，试想如果没有同源策略，可能 a.com 的一段 JavaScript 脚本，在 b.com 未曾加载此脚本时，也可以随意涂改 b.com 的页面（在浏览器的显示中）。为了不让浏览器的页面行为发生混乱，浏览器提出了“Origin”（源）这一概念，来自不同 Origin的对象无法互相干扰。
+对于JavaScript来说，以下情况被认为是同源与不同源的：</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>OutCome</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>http://test.icehoney.me/test1.html</td>
+<td>Success</td>
+<td></td>
+</tr>
+<tr>
+<td>http://test.icehoney.me/dir1/test2.html</td>
+<td>Success</td>
+<td></td>
+</tr>
+<tr>
+<td>https://test.icehoney.me/secure.html</td>
+<td>Failure</td>
+<td>Different protocol</td>
+</tr>
+<tr>
+<td>http://test.icehoney.me:81/secure.html</td>
+<td>Failure</td>
+<td>Different port</td>
+</tr>
+<tr>
+<td>http://blog.icehoney.me/secure.html</td>
+<td>Failure</td>
+<td>Different host</td>
+</tr>
+</tbody>
+</table>
+<p>由上表可知，影响“源”的因素有：host（域名或IP地址，如果是IP地址则看做一个根域名）、子域名、端口、协议。</p>
+<p>需要注意的是，对于当前页面来说，页面内存放JavaScript文件的域并不重要，重要的是加载JavaScript页面所在的域是什么。</p>
+<p>例如，在 baidu.com上有以下代码：</p>
+<pre><code>    &lt;script src="http://google.com/ga.js"&gt;&lt;/script&gt;
+</code></pre>
+<p>baidu加载了google的ga.js，但是ga.js是运行在baidu.com页面中的，因此对于当前打开的页面(baidu.com页面)来说，ga.js的Origin就应该是baidu.com而非google.com。</p>
+<p>在浏览器中，<code>&lt;script&gt;、&lt;img&gt;、&lt;iframe&gt;、&lt;link&gt;</code>等标签都可以跨域加载资源，而不受同源策略的限制。这些带"src"属性的标签每次加载时，实际上是由浏览器发起了一次GET请求。不同于 XMLHttpRequest 的是，通过src属性加载的资源，浏览器限制了JavaScript的权限，使其不能读、写返回的内容。</p>
+<h2 id="ajax">AJAX</h2>
+<p>随着互联网的发展，对用户体验的要求越来越高，AJAX应用也就越发频繁，AJAX的本质就是 XMLHttpRequest。但 XMLHttpRequest 受到同源策略的约束，不能跨域访问资源，在AJAX应用的开发中尤其需要注意这一点。</p>
+<p>如果 XMLHttpRequest 能够跨域访问资源，则可能会导致一些敏感数据泄漏，例如CSRF的 token，从而导致发生安全问题。</p>
+<h2 id="_2">跨域解决方案</h2>
+<p>随着互联网越来越开放，跨越请求的需求也越来越迫切。因此 W3C 委员会指定了 XMLHttpRequest 跨域访问标准。它需要通过目标域返回的HTTP头来授权是否允许跨域访问，因为HTTP头对于JavaScript来说一般是无法控制的，所以认为这个方案是可以实施的。
+注意：这个跨域访问方案的安全基础就是信任“JavaScript无法控制该HTTP头”，如果此信任基础被打破，则此方案也将不再安全。</p>
+<p><img alt="Cross Origin" src="../../../img/Same-Origin-Policy-2.png" /></p>
+<p>由上图可以看出在页面<code>http://pan.baidu.com/disk/home</code> 向URL <code>http://localhost:6800/jsonrpc?tm=1428134320921</code> 发起了一次POST请求，
+这时并没有因为同源策略而遭到限制，因为在 Response Headers里面有一条: <code>Access-Control-Allow-Origin:*</code> 这句话声明了目标网址接受来自任何网址
+的跨域请求，所以浏览器允许了此次跨域请求。</p>
+<h2 id="_3">总结</h2>
+<p>对于浏览器来说，除了DOM、Cookie、XMLHttpRequest 会受到同源策略的限制外，浏览器加载的一些第三方插件也有各自的同源策略。最常见的一些插件如 Flash、Java Applet、Silverlight、Google Gears等都有自己的控制策略。</p>
+<p>浏览器的同源策略是浏览器安全的基础，同源策略一旦出现漏洞被绕过，也将带来非常严重的后果，很多基于同源策略制定的安全方案都将失去效果。</p>
+</div>
+        </div>
+        <footer class="footer col-md-12">
+            <hr>
+            
+                <p>Copyright &copy; 2015, <a href="https://github.com/acgotaku/WebSecurity">CSS WebSecurity</a>.</p>
+            
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script src="../../../js/base.js"></script>
+    </body>
+</html>

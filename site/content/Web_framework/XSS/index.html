@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+       <title>模板引擎与XSS防御 - Web Security - Web Security</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link href="../../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Web Security</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">XSS <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../XSS/Overview">XSS</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Cookie">Stealing Cookie With XSS</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/CSS-history-hack">CSS History Hack</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Worm">XSS Worm</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Defense">XSS Defense</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browser Security <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Browser_Security/Same-Origin-Policy">Same Origin Policy</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Browser_Security/Browser-Sandbox">Browser Sandbox</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Browser_Security/Malicious-URL-interception">Malicious URL interception</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web服务配置安全 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Web_Server_Sercurity/Web-Server-Sercurity">Web Server Sercurity</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SQL_injection <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../SQL_injection/Overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../SQL_injection/SQL_injection">SQL_injection</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../SQL_injection/SQL_injection_defence">SQL_injection defence</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clickjacking <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Clickjacking/Overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Click_Jacking">Click_Jacking</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Click_Jacking_defence">Click Jacking defence</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">CSRF <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../CSRF/Overview">CSRF</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Attack">CSRF Attack</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Defense">CSRF Defense</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web框架安全 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../Overview">Web框架安全概述</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href=".">模板引擎与XSS防御</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../csrf">Web框架与CSRF防御</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">拒绝服务攻击 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../DOS/Overviewed">DOS攻击原理</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../DOS/general-dos">通用的DoS攻击技术</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Access_Control <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Access_Control/Overview">Access_Control</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/DAC">DAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/MAC">MAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/RBAC">RBAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/Perform">Perform</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <!--
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../Overview">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../csrf">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/acgotaku/WebSecurity">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+            -->
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#xss">XSS防御</a></li>
+        
+            <li><a href="#_1">防御方法</a></li>
+        
+            <li><a href="#django-xss">Django 与 XSS 防御</a></li>
+        
+            <li><a href="#velocity-xss">Velocity 与 XSS 防御</a></li>
+        
+            <li><a href="#_2">总结</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main"><h1 id="xss">XSS防御</h1>
+<p>模板引擎与XSS防御    </p>
+<hr />
+<h2 id="_1"><strong>防御方法</strong></h2>
+<p>在View层，可以解决XSS问题。XSS攻击实在用户的浏览器上执行的。其形成过程则是在服务器端页面渲染时，注入了恶意 的HTML代码导致的。从MVC架构来说，是发生在View层，因此可以使用“<strong>输出编码</strong>”的方式来防御，即针对不同上下文的XSS攻击场景，使用不同的编码方式。    </p>
+<p>“输出编码”的防御方法可以总结为以下几种：      </p>
+<ul>
+<li>在HTML标签中输出变量     </li>
+<li>在HEML属性中输出变量</li>
+<li>在script标签中输出变量</li>
+<li>在事件中输出变量</li>
+<li>在CSS中输出变量</li>
+<li>在URL中输出变量   </li>
+</ul>
+<p>针对不同的情况，使用不同的编码函数。      </p>
+<hr />
+<h2 id="django-xss"><strong>Django 与 XSS 防御</strong></h2>
+<p>在当前流行的MVC框架中， View层常用的技术是使用模板引擎对页面进行渲染，比如在Django中就是用了 Django Templates 作为模板引擎。模板引擎本身会提供一些编码方法。比如在 Django Templates 中，使用 filters 中的 escape 作为 HtmlEncode 的方法：    </p>
+<pre><code>    &lt;h1&gt;hello,  {{ name|escape }}!&lt;/h1&gt;
+</code></pre>
+<p>Django Templates 同时支持 auto-escape，符合 Secure by Default 原则。现在的 Django Templates 默认是将 aotu-escape 开启的，所有的变量都会经过 HTMLEncode后输出。默认是编码了5个字符：    </p>
+<pre><code>    &lt; is converted to &amp;lt;
+    &gt; is converted to &amp;gt;
+    ' (single queto) is converted to &amp;#39;
+    " (double quote) is converted to &amp;quot;
+    &amp; is converted to &amp;amp;
+</code></pre>
+<p>如果要关闭 auto-escape，则需要使用以下方法：    </p>
+<pre><code>    {{ data|safe }}
+</code></pre>
+<p>或者    </p>
+<pre><code>    {% autoescape off %}
+        Hello {{ name }}
+    {% endautoescape %}
+</code></pre>
+<p>为了方便，很多程序员可能会选择关闭 auto-escape。要检查 auto-escape 是否被关闭也很简单，搜索代码里是否出现上面两种情况即可。    </p>
+<p>但是如前文所述，最好的XSS防御方案，在不同的场景需要使用不同的编码函数。如果统一使用者5个字符的HTMLEncode， 则很可能会被攻击者绕过。由此看来，这种 auto-escape 的方案也不是很完善。   </p>
+<hr />
+<h2 id="velocity-xss"><strong>Velocity 与 XSS 防御</strong></h2>
+<p>在模板引擎Velocity中，也提供了类似的机制，但有所不同的是，Velocity 默认是没有开启 HtmlEncode 的。   </p>
+<p>在 Velocity 中，可以通过 Event Handler 来进行 HTMLEncode。    </p>
+<pre><code>    eventhandler.referenceinsertion.class = org.apache.velocity.app.event.implement.
+    EscapeHtmlReference
+    eventhandler.escape.html.match = /msg.*/
+</code></pre>
+<p>使用方法如下，这里同时还加入了一个转义SQL语句的 Event Handler。    </p>
+<pre><code>    ...
+
+    import org.apache.velocity.app.event.EventCartridge;
+    import org.apache.velocity.app.event.ReferenceInsertionEventHandler;
+    import org.apache.velocity.app.event.implement.EscapeHtmlReference;
+    import org.apache.velocity.app.event.implement.EscapeSqlReference;
+
+    ...
+
+    public class Test
+    {
+        public void myTest()
+        {
+            ...
+
+            /**
+             * Make a cartridge to hold the event handlers
+             */
+            EventCartridge ec = new EventCartridge();
+
+            /**
+             * then register and chain two escape-related handlers
+             */
+            ec.addEventHandler(new EscapeHtmlReference());
+            ec.addEventHandler(new EscapeSqlReference());
+
+             /**
+             * and then finally let it attach itself to the context
+             */
+            ec.attachToContext(context);
+
+             /**
+             * now merge your template with the context as you mormally do
+             */
+
+            ...
+        }
+
+    }
+</code></pre>
+<p>但 Velocity 提供的处理机制，与 Django 的 auto-escape 所提供的机制是类似的，都只进行了 HTMLEncode，而未细分编码使用的具体场景。不过在模板引擎中，可以实现自定义的编码函数，应用于不同场景。在 Django 中是使用自定义 filters，在 Velocity 中则可以使用“宏”（velocimacro），比如：</p>
+<pre><code>    XML编码输出，将会执行 XML Encode 输出
+    #SXML($xml)
+
+    JS编码输出，将会执行JavaScript Encode输出
+    #SJS($js)
+</code></pre>
+<p>通过自定义的方法，使得XSS防御的功能得到完善；同时在模板系统中，搜索不安全的变量也有了依据，甚至在代码检测工具中，可以自动判断出需要使用那一种安全的编码方式。    </p>
+<hr />
+<h2 id="_2"><strong>总结</strong></h2>
+<p>在模板引擎中，可以实现自定义的编码函数，来应用于不同的场景。我们可以依据是否有细分场景使用不同的编码方式来判断XSS的安全方案是否完善。在很多 Web 框架官方文档中推荐的用法，就是存在缺陷的。Web 框架的开发者在设计安全方案时，有时会缺乏来自安全专家的建议。所以开发者在使用框架时，应该慎重对待安全问题。    </p>
+</div>
+        </div>
+        <footer class="footer col-md-12">
+            <hr>
+            
+                <p>Copyright &copy; 2015, <a href="https://github.com/acgotaku/WebSecurity">CSS WebSecurity</a>.</p>
+            
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script src="../../../js/base.js"></script>
+    </body>
+</html>

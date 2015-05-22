@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+       <title>SQL_injection defence - Web Security - Web Security</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link href="../../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Web Security</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">XSS <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../XSS/Overview">XSS</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Cookie">Stealing Cookie With XSS</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/CSS-history-hack">CSS History Hack</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Worm">XSS Worm</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Defense">XSS Defense</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browser Security <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Browser_Security/Same-Origin-Policy">Same Origin Policy</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Browser_Security/Browser-Sandbox">Browser Sandbox</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Browser_Security/Malicious-URL-interception">Malicious URL interception</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web服务配置安全 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Web_Server_Sercurity/Web-Server-Sercurity">Web Server Sercurity</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SQL_injection <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../Overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../SQL_injection">SQL_injection</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href=".">SQL_injection defence</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clickjacking <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Clickjacking/Overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Click_Jacking">Click_Jacking</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Click Jacking defence">Click Jacking defence</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">CSRF <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../CSRF/Overview">CSRF</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Attack">CSRF Attack</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Defense">CSRF Defense</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web框架安全 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Web_framework/Overview">Web框架安全概述</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_framework/XSS">模板引擎与XSS防御</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_framework/csrf">Web框架与CSRF防御</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">拒绝服务攻击 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../DOS/Overviewed">DOS攻击原理</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../DOS/general-dos">通用的DoS攻击技术</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Access_Control <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Access_Control/Overview">Access_Control</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/DAC">DAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/MAC">MAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/RBAC">RBAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/Perform">Perform</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <!--
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../SQL_injection">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../../Clickjacking/Overview">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/acgotaku/WebSecurity">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+            -->
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#sql-injection">SQL Injection</a></li>
+        
+            <li><a href="#sql">SQL注入的预防</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main"><h1 id="sql-injection">SQL Injection</h1>
+<p>Structured Query Language Injection</p>
+<hr />
+<h2 id="sql">SQL注入的预防</h2>
+<h3 id="_1">单引号配对转义</h3>
+<p>如果用户提交的数字数据内置在SQL查询中，这种数据通常并不包含在单引号中。因此，攻击者能够破坏数据使用环境并开始输入任意SQL查询，这时就不必输入单引号。在二阶SQL注入攻击中，最初在插入数据库中时已经安全转义的数据随后被从数据库中读取出来，然后再次写入。当重新使用数据时最初配对的引号又恢复到单引号形式。<br />
+如果在使用Oracle的实例中所见，编写存在缺陷的存储过程可能在自身代码中包含的SQL注入漏洞，在存储过程中构建SQL语句时也可能出现类似的安全问题，使用存储过程也无法防止漏洞产生。</p>
+<h3 id="_2">参数化查询（预处理语句）</h3>
+<p>大多数数据库和应用开发平台都提供API，对不可信的输入进行安全处理，以防止SQL注入漏洞。<br />
+（1）应用程序指定查询结构，为用户输入的每个数据预留占位符。<br />
+（2）应用程序指定每个占位符的内容。<br />
+不安全查询和相应的参数化查询的对比：  </p>
+<pre><code>    String queryText = "select ename,sal from emp where ename = '"  
+    queryText += request.getParameter("name");  
+    queryText +="'";  
+    stmt = con.createStatement();  
+    rs = stmt.executeQuery(querytext);
+</code></pre>
+<p>上述代码中，用户提交的name参数被直接嵌入到一个SQL语句中，致使应用程序易受SQL注入。  </p>
+<pre><code>    String queryText = "SELECT ename,sal FROM EMP WHERE ename = ?"  
+    stmt = con.prepareStatement(queryText);  
+    stmt.setString(1,request.getParameter("name"));  
+    rs = stmt.executeQuery();
+</code></pre>
+<p>上述代码使用一个问号作为用户提交参数的占位符，以确定查询的结构。随后，代码调用prepareStatement方法解释了这个参数，并确定将要执行的查询结构。之后，它使用setString方法指定参数的实际值。由于查询的结构已经固定，这个值可为任何数据类型，而不会影响查询的结构。</p>
+<h3 id="_3">深层防御</h3>
+<p>当访问数据库时，应用程序应尽可能使用最低权限的账户。<br />
+许多企业数据库包含大量默认功能，可被能够执行任意SQL语句的攻击者利用。<br />
+应评估、测试并及时安装供应商发布的所有安全补丁，以修复数据库软件本身已知的漏洞。  </p>
+</div>
+        </div>
+        <footer class="footer col-md-12">
+            <hr>
+            
+                <p>Copyright &copy; 2015, <a href="https://github.com/acgotaku/WebSecurity">CSS WebSecurity</a>.</p>
+            
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script src="../../../js/base.js"></script>
+    </body>
+</html>

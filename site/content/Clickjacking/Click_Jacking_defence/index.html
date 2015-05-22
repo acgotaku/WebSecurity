@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+       <title>Click Jacking defence - Web Security - Web Security</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link href="../../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Web Security</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">XSS <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../XSS/Overview">XSS</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Cookie">Stealing Cookie With XSS</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/CSS-history-hack">CSS History Hack</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Worm">XSS Worm</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Defense">XSS Defense</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browser Security <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Browser_Security/Same-Origin-Policy">Same Origin Policy</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Browser_Security/Browser-Sandbox">Browser Sandbox</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Browser_Security/Malicious-URL-interception">Malicious URL interception</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web服务配置安全 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Web_Server_Sercurity/Web-Server-Sercurity">Web Server Sercurity</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SQL_injection <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../SQL_injection/Overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../SQL_injection/SQL_injection">SQL_injection</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../SQL_injection/SQL_injection_defence">SQL_injection defence</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clickjacking <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../Overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../Click_Jacking">Click_Jacking</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href=".">Click Jacking defence</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">CSRF <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../CSRF/Overview">CSRF</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Attack">CSRF Attack</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Defense">CSRF Defense</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web框架安全 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Web_framework/Overview">Web框架安全概述</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_framework/XSS">模板引擎与XSS防御</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_framework/csrf">Web框架与CSRF防御</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">拒绝服务攻击 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../DOS/Overviewed">DOS攻击原理</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../DOS/general-dos">通用的DoS攻击技术</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Access_Control <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Access_Control/Overview">Access_Control</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/DAC">DAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/MAC">MAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/RBAC">RBAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/Perform">Perform</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <!--
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../Click_Jacking">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../../CSRF/Overview">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/acgotaku/WebSecurity">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+            -->
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#click-jacking">Click Jacking</a></li>
+        
+            <li><a href="#frame-busting">Frame Busting</a></li>
+        
+            <li><a href="#x-frame-options">X-Frame-Options</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main"><h1 id="click-jacking">Click Jacking</h1>
+<p>点击劫持  一个视觉欺骗手段</p>
+<hr />
+<h2 id="frame-busting">Frame Busting</h2>
+<p>通常写一段代码禁止JavaScript代码，以禁止iframe嵌套。如可写下列一段代码：  </p>
+<pre><code>    if(top.location!=location)  
+    top.location=self.location;
+</code></pre>
+<p>常见的Frame Busting有以下形式：  </p>
+<pre><code>    if (top != self)  
+    if (top.location != self.location)  
+    if (top.location != location)  
+    if (parent.frames.length &gt; 0)  
+    if (window != top)  
+    if (window.top !== window.self)  
+    if (window.self != window.top)  
+    if (parent &amp;&amp; parent != window)  
+    if (parent &amp;&amp; parent.frames &amp;&amp; parent.frames.length&gt;0)  
+    if((self.parent&amp;&amp;!(self.parent===self))&amp;&amp;(self.parent.frames.length!=0))  
+    top.location = self.location  
+    top.location.href = document.location.href  
+    top.location.href = self.location.href  
+    top.location.replace(self.location)  
+    top.location.href = window.location.href  
+    top.location.replace(document.location)  
+    top.location.href = window.location.href  
+    top.location.href = "URL"  
+    document.write('')  
+    top.location = location  
+    top.location.replace(document.location)  
+    top.location.replace('URL')  
+    top.location.href = document.location  
+    top.location.replace(window.location.href)  
+    top.location.href = location.href  
+    self.parent.location = document.location  
+    parent.location.href = self.document.location  
+    top.location.href = self.location  
+    top.location = window.location  
+    top.location.replace(window.location.pathname)  
+    window.top.location = window.self.location  
+    setTimeout(function(){document.body.innerHTML='';},1);  
+    window.self.onload = function(evt){document.body.innerHTML='';}  
+    var url = window.location.href; top.location.replace(url)
+</code></pre>
+<p>但是Frame Busting也有很多缺陷，由于它是JavaScript写的，控制能力不是特别强，因此有很多方法绕过它。  </p>
+<h2 id="x-frame-options">X-Frame-Options</h2>
+<p>X-Frame-Options HTTP 响应头，可以指示浏览器是否应该加载一个iframe中的页面。网站可以通过设置X-Frame-Options阻止站点内的页面被其他页面嵌入从而防止点击劫持。  </p>
+<h3 id="x-frame-options_1">X-FRAME-OPTIONS</h3>
+<p>X-Frame-Options共有三个值：<br />
+DENY<br />
+任何页面都不能被嵌入到iframe或者frame中。<br />
+SAMEORIGIN<br />
+页面只能被本站页面嵌入到iframe或者frame中。<br />
+ALLOW-FROM URI<br />
+页面自能被指定的Uri嵌入到iframe或frame中。  </p>
+<h3 id="apachex-frame-options">APACHE配置X-FRAME-OPTIONS</h3>
+<p>在站点配置文件httpd.conf中添加如下配置，限制只有站点内的页面才可以嵌入iframe。<br />
+Header always append X-Frame-Options SAMEORIGIN<br />
+配置之后重启apache使其生效。该配置方式对IBM HTTP Server同样适用。<br />
+如果同一apache服务器上有多个站点，只想针对一个站点进行配置，可以修改.htaccess文件，添加如下内容：<br />
+Header append X-FRAME-OPTIONS "SAMEORIGIN"  </p>
+<h3 id="nginx-x-frame-options">NGINX 配置X-FRAME-OPTIONS</h3>
+<p>到 nginx/conf文件夹下，修改nginx.conf ，添加如下内容：<br />
+add_header X-Frame-Options "SAMEORIGIN";<br />
+重启Nginx服务。  </p>
+<h3 id="iisx-frame-options">IIS配置X-FRAME-OPTIONS</h3>
+<p>在web站点的web.config中配置：  </p>
+<pre><code>    &lt;system.webServer&gt;
+
+     ...
+
+        &lt;httpProtocol&gt;
+        &lt;customHeaders&gt;
+        &lt;add name="X-Frame-Options" value="SAMEORIGIN" /&gt;  
+        &lt;/customHeaders&gt;  
+        &lt;/httpProtocol&gt;  
+    ...
+
+    &lt;/system.webServer&gt;
+</code></pre>
+</div>
+        </div>
+        <footer class="footer col-md-12">
+            <hr>
+            
+                <p>Copyright &copy; 2015, <a href="https://github.com/acgotaku/WebSecurity">CSS WebSecurity</a>.</p>
+            
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script src="../../../js/base.js"></script>
+    </body>
+</html>

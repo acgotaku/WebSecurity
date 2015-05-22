@@ -14,10 +14,10 @@ pages:
 - ['content/Web_Server_Sercurity/Web-Server-Sercurity.md', Web服务配置安全]
 - ['content/SQL_injection/Overview.md', 'SQL_injection', 'Overview']
 - ['content/SQL_injection/SQL_injection.md', 'SQL_injection', 'SQL_injection']
-- ['content/SQL_injection/SQL_injection defence.md', 'SQL_injection', 'SQL_injection defence']
+- ['content/SQL_injection/SQL_injection_defence.md', 'SQL_injection', 'SQL_injection defence']
 - ['content/Clickjacking/Overview.md', 'Clickjacking', 'Overview']
 - ['content/Clickjacking/Click_Jacking.md', 'Clickjacking', 'Click_Jacking']
-- ['content/Clickjacking/Click Jacking defence.md', 'Clickjacking', 'Click Jacking defence']
+- ['content/Clickjacking/Click_Jacking_defence.md', 'Clickjacking', 'Click Jacking defence']
 - ['content/CSRF/Overview.md', 'CSRF', 'CSRF']
 - ['content/CSRF/CSRF_Attack.md', 'CSRF', 'CSRF Attack']
 - ['content/CSRF/CSRF_Defense.md', 'CSRF', 'CSRF Defense']
@@ -27,6 +27,9 @@ pages:
 - ['content/DOS/Overviewed.md', '拒绝服务攻击', 'DOS攻击原理']
 - ['content/DOS/general-dos.md', '拒绝服务攻击', '通用的DoS攻击技术']
 - ['content/Access_Control/Overview.md', 'Access_Control', 'Access_Control']
+- ['content/Access_Control/DAC.md', 'Access_Control', 'DAC']
+- ['content/Access_Control/MAC.md', 'Access_Control', 'MAC']
+- ['content/Access_Control/RBAC.md', 'Access_Control', 'RBAC']
 - ['content/Access_Control/Perform.md', 'Access_Control', 'Perform']
 
 theme_dir: 'orange'

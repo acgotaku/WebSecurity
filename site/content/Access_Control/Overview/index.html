@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+       <title>Access_Control - Web Security - Web Security</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link href="../../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Web Security</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">XSS <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../XSS/Overview">XSS</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Cookie">Stealing Cookie With XSS</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/CSS-history-hack">CSS History Hack</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Worm">XSS Worm</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../XSS/XSS-Defense">XSS Defense</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browser Security <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Browser_Security/Same-Origin-Policy">Same Origin Policy</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Browser_Security/Browser-Sandbox">Browser Sandbox</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Browser_Security/Malicious-URL-interception">Malicious URL interception</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web服务配置安全 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Web_Server_Sercurity/Web-Server-Sercurity">Web Server Sercurity</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SQL_injection <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../SQL_injection/Overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../SQL_injection/SQL_injection">SQL_injection</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../SQL_injection/SQL_injection_defence">SQL_injection defence</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clickjacking <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Clickjacking/Overview">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Click_Jacking">Click_Jacking</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Click_Jacking_defence">Click Jacking defence</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">CSRF <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../CSRF/Overview">CSRF</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Attack">CSRF Attack</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Defense">CSRF Defense</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web框架安全 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../Web_framework/Overview">Web框架安全概述</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_framework/XSS">模板引擎与XSS防御</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_framework/csrf">Web框架与CSRF防御</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">拒绝服务攻击 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../DOS/Overviewed">DOS攻击原理</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../DOS/general-dos">通用的DoS攻击技术</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Access_Control <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li class="active">
+                            <a href=".">Access_Control</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../DAC">DAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../MAC">MAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../RBAC">RBAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../Perform">Perform</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <!--
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../../DOS/general-dos">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../DAC">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/acgotaku/WebSecurity">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+            -->
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#_1">访问控制</a></li>
+        
+            <li><a href="#_2">访问控制概念及要素</a></li>
+        
+            <li><a href="#_3">访问控制功能及原理</a></li>
+        
+            <li><a href="#_4">访问控制分类</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main"><h1 id="_1">访问控制</h1>
+<p>Access_Control</p>
+<hr />
+<h2 id="_2">访问控制概念及要素</h2>
+<p>访问控制（Access Control）指系统对用户身份及其所属的预先定义的策略组限制其使用数据资源能力的手段。通常用于系统管理员控制用户对服务器、目录、文件等网络资源的访问。访问控制是系统保密性、完整性、可用性和合法使用性的重要基础，是网络安全防范和资源保护的关键策略之一，也是主体依据某些控制策略或权限对客体本身或其资源进行的不同授权访问。</p>
+<p>访问控制包括三个要素：主体、客体和控制策略。</p>
+<p>（1）主体S（Subject）。是指提出访问资源具体请求。是某一操作动作的发起者，但不一定是动作的执行者，可能是某一用户，也可以是用户启动的进程、服务和设备等。</p>
+<p>（2）客体O（Object）。是指被访问资源的实体。所有可以被操作的信息、资源、对象都可以是客体。客体可以是信息、文件、记录等集合体，也可以是网络上硬件设施、无限通信中的终端，甚至可以包含另外一个客体。</p>
+<p>（3）控制策略A（Attribution）。是主体对客体的相关访问规则集合，即属性集合。访问策略体现了一种授权行为，也是客体对主体某些操作行为的默认。</p>
+<h2 id="_3">访问控制功能及原理</h2>
+<p>访问控制的主要功能包括：保证合法用户访问受权保护的网络资源，防止非法的主体进入受保护的网络资源，或防止合法用户对受保护的网络资源进行非授权的访问。访问控制首先需要对用户身份的合法性进行验证，同时利用控制策略进行选用和管理工作。当用户身份和访问权限验证之后，还需要对越权操作进行监控。</p>
+<p>（1）认证。包括主体对客体的识别及客体对主体的检验确认。</p>
+<p>（2）控制策略。通过合理地设定控制规则集合，确保用户对信息资源在授权范围内的合法使用。既要确保授权用户的合理使用，又要防止非法用户侵权进入系统，使重要信息资源泄露。同时对合法用户，也不能越权行使权限以外的功能及访问范围。</p>
+<p>（3）安全审计。系统可以自动根据用户的访问权限，对计算机网络环境下的有关活动或行为进行系统的、独立的检查验证，并做出相应评价与审计。</p>
+<h2 id="_4">访问控制分类</h2>
+<p>访问控制可分为自主访问控制（DAC）、强制访问控制（MAC）和基于角色访问控制（RBAC）三大类。</p>
+<h4 id="_5">自主访问控制</h4>
+<p>自主访问控制（Discretionary Access Control，DAC）是一种接入控制服务，通过执行基于系统实体身份及其到系统资源的接入授权。包括在文件，文件夹和共享资源中设置许可。用户有权对自身所创建的文件、数据表等访问对象进行访问，并可将其访问权授予其他用户或收回其访问权限。允许访问对象的属主制定针对该对象访问的控制策略，通常，可通过访问控制列表来限定针对客体可执行的操作。</p>
+<p>①每个客体有一个所有者，可按照各自意愿将客体访问控制权限授予其他主体。
+②各客体都拥有一个限定主体对其访问权限的访问控制列表（ACL）。
+③每次访问时都以基于访问控制列表检查用户标志，实现对其访问权限控制。
+④DAC的有效性依赖于资源的所有者对安全政策的正确理解和有效落实。</p>
+<p>DAC提供了适合多种系统环境的灵活方便的数据访问方式，是应用最广泛的访问控制策略。然而，它所提供的安全性可被非法用户绕过，授权用户在获得访问某资源的权限后，可能传送给其他用户。主要是在自由访问策略中，用户获得文件访问后，若不限制对该文件信息的操作，即没有限制数据信息的分发。所以DAC提供的安全性相对较低，无法对系统资源提供严格保护。</p>
+<h4 id="_6">强制访问控制</h4>
+<p>强制访问控制（MAC）是系统强制主体服从访问控制策略。是由系统对用户所创建的对象，按照规定的规则控制用户权限及操作对象的访问。主要特征是对所有主体及其所控制的进程、文件、段、设备等客体实施强制访问控制。在MAC中，每个用户及文件都被赋予一定的安全级别，只有系统管理员才可确定用户和组的访问权限，用户不能改变自身或任何客体的安全级别。系统通过比较用户和访问文件的安全级别，决定用户是否可以访问该文件。此外，MAC不允许通过进程生成共享文件，以通过共享文件将信息在进程中传递。MAC可通过使用敏感标签对所有用户和资源强制执行安全策略，一般采用3种方法：限制访问控制、过程控制和系统限制。MAC常用于多级安全军事系统，对专用或简单系统较有效，但对通用或大型系统并不太有效。</p>
+<p>MAC的安全级别有多种定义方式，常用的分为4级：绝密级（Top Secret）、秘密级（Secret）、机密级（Confidential）和无级别级（Unclas sified），其中T&gt;S&gt;C&gt;U。所有系统中的主体（用户，进程）和客体（文件，数据）都分配安全标签，以标识安全等级。</p>
+<p>通常MAC与DAC结合使用，并实施一些附加的、更强的访问限制。一个主体只有通过自主与强制性访问限制检查后，才能访问其客体。用户可利用DAC来防范其他用户对自己客体的攻击，由于用户不能直接改变强制访问控制属性，所以强制访问控制提供了一个不可逾越的、更强的安全保护层，以防范偶然或故意地滥用DAC。</p>
+<h4 id="_7">基于角色的访问控制</h4>
+<p>角色（Role）是一定数量的权限的集合。指完成一项任务必须访问的资源及相应操作权限的集合。角色作为一个用户与权限的代理层，表示为权限和用户的关系，所有的授权应该给予角色而不是直接给用户或用户组。</p>
+<p>基于角色的访问控制（Role-Based Access Control，RBAC）是通过对角色的访问所进行的控制。使权限与角色相关联，用户通过成为适当角色的成员而得到其角色的权限。可极大地简化权限管理。为了完成某项工作创建角色，用户可依其责任和资格分派相应的角色，角色可依新需求和系统合并赋予新权限，而权限也可根据需要从某角色中收回。减小了授权管理的复杂性，降低管理开销，提高企业安全策略的灵活性。</p>
+<p>RBAC模型的授权管理方法，主要有3种：
+①根据任务需要定义具体不同的角色。
+②为不同角色分配资源和操作权限。
+③给一个用户组（Group，权限分配的单位与载体）指定一个角色。</p>
+<p>RBAC支持三个著名的安全原则：最小权限原则、责任分离原则和数据抽象原则。前者可将其角色配置成完成任务所需要的最小权限集。第二个原则可通过调用相互独立互斥的角色共同完成特殊任务，如核对账目等。后者可通过权限的抽象控制一些操作，如财务操作可用借款、存款等抽象权限，而不用操作系统提供的典型的读、写和执行权限。这些原则需要通过RBAC各部件的具体配置才可实现。</p>
+<p>在网络中，为了保护网络资源的安全，一般是通过路由设备或者防火墙建立基于IP的访问控制。这种访问控制的“主体”是网络请求的发起方，“客体”是网络请求的接收方，主体对客体的“操作”是对客体的某个端口发起网络请求，主体对客体的操作是对课题的某个端口发起网络请求。这个操作能否成功，是受到防火墙ACL策略限制的。</p>
+<p>在操作系统中，对文件的访问也有访问控制。此时的“主体”是系统的用户，“客体”是被访问的文件，能否访问成功，将由操作系统给文件设置的ACL（访问控制表）决定。比如在Linux系统中，一个文件可执行的操作分为“读”、“写”、“执行”三种，分别由r、w、x表示。这三种操作同时对应着三种主体：文件拥有者、文件拥有者所在的用户组、其他用户。主体、客体、操作这三者之间的对应关系，构成了访问控制表。</p>
+<p><img alt="Linux_file" src="../../../img/Linux_file.jpg" /></p>
+<p>在一个安全系统中，确定主体的身份是“认证”解决的问题；而客体是一种资源，是主体发起的请求的对象。在主体对客体进行操作的过程中，系统控制主体不能“无限制”的对客体进行操作，这个过程就是访问控制。</p>
+<p>主体能够做什么，就是权限。在Linux的文件系统中，将权限分成了“读”、“写”、“执行”三种；在Web应用中，根据访问客体的不同，常见的访问控制可以分为“基于URL的访问控制”、“基于方法的访问控制”和“基于数据的访问控制”。</p>
+</div>
+        </div>
+        <footer class="footer col-md-12">
+            <hr>
+            
+                <p>Copyright &copy; 2015, <a href="https://github.com/acgotaku/WebSecurity">CSS WebSecurity</a>.</p>
+            
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script src="../../../js/base.js"></script>
+    </body>
+</html>
