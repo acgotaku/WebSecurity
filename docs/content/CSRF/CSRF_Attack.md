@@ -10,7 +10,7 @@
 
 受害者在没有登出的情况下访问攻击网站evil1.com.
 
-![browse](img/evil.png)
+![browse](img/ browse.png)
 
 前面两步已经满足了CSRF攻击的条件，所以结果就是攻击实现,用户网站内部zoobars丢失。
 
