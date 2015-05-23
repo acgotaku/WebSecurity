@@ -31,7 +31,7 @@ pages:
 - ['content/Access_Control/DAC.md', 'Access_Control', 'DAC']
 - ['content/Access_Control/MAC.md', 'Access_Control', 'MAC']
 - ['content/Access_Control/RBAC.md', 'Access_Control', 'RBAC']
-- ['content/Access_Control/Perform.md', 'Access_Control', 'Perform']
+
 
 theme_dir: 'orange'
 repo_url: https://github.com/acgotaku/WebSecurity
