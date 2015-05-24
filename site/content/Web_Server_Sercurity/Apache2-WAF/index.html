@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-       <title>Same Origin Policy - Web Security - Web Security</title>
+       <title>Apache2 ModSecurity - Web Security - Web Security</title>
 
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -79,20 +79,20 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browser Security <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li class="active">
-                            <a href=".">Same Origin Policy</a>
+                        <li >
+                            <a href="../../Browser_Security/Same-Origin-Policy">Same Origin Policy</a>
                         </li>
                     
                         <li >
-                            <a href="../Browser-Sandbox">Browser Sandbox</a>
+                            <a href="../../Browser_Security/Browser-Sandbox">Browser Sandbox</a>
                         </li>
                     
                         <li >
-                            <a href="../Malicious-URL-interception">Malicious URL interception</a>
+                            <a href="../../Browser_Security/Malicious-URL-interception">Malicious URL interception</a>
                         </li>
                     
                     </ul>
@@ -100,16 +100,16 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web服务配置安全 <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../Web_Server_Sercurity/Web-Server-Sercurity">Web Server Sercurity</a>
+                            <a href="../Web-Server-Sercurity">Web Server Sercurity</a>
                         </li>
                     
-                        <li >
-                            <a href="../../Web_Server_Sercurity/Apache2-WAF">Apache2 ModSecurity</a>
+                        <li class="active">
+                            <a href=".">Apache2 ModSecurity</a>
                         </li>
                     
                     </ul>
@@ -248,12 +248,12 @@
             <!--
             <ul class="nav navbar-nav navbar-right">
                 <li >
-                    <a rel="next" href="../../XSS/XSS-Defense">
+                    <a rel="next" href="../Web-Server-Sercurity">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../Browser-Sandbox">
+                    <a rel="prev" href="../../SQL_injection/Overview">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -277,85 +277,99 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#same-origin-policy">Same Origin Policy</a></li>
+        <li class="main active"><a href="#apache2-modsecurity">Apache2 ModSecurity</a></li>
         
-            <li><a href="#_1">同源策略基本介绍</a></li>
+            <li><a href="#overview">Overview</a></li>
         
-            <li><a href="#ajax">AJAX</a></li>
+            <li><a href="#_1">服务器环境</a></li>
         
-            <li><a href="#_2">跨域解决方案</a></li>
+            <li><a href="#modsecurity">安装ModSecurity及其依赖</a></li>
         
-            <li><a href="#_3">总结</a></li>
+            <li><a href="#modsecurity_1">配置ModSecurity</a></li>
+        
+            <li><a href="#_2">启用核心规则集</a></li>
+        
+            <li><a href="#modsecurity_2">启用ModSecurity模块</a></li>
+        
+            <li><a href="#_3">配置效果</a></li>
         
     
     </ul>
 </div></div>
-            <div class="col-md-9" role="main"><h1 id="same-origin-policy">Same Origin Policy</h1>
-<p>浏览器同源策略</p>
+            <div class="col-md-9" role="main"><h1 id="apache2-modsecurity">Apache2 ModSecurity</h1>
+<p>Web服务器安全</p>
 <hr />
-<h2 id="_1">同源策略基本介绍</h2>
-<p>同源策略（Same Origin Policy）是一种约定，它是浏览器最核心也是最基本的安全功能，如果缺少了同源策略，则浏览器的正常功能可能会受到影响。可以说Web是构建在同源策略的基础之上的，浏览器只是针对同源策略的一种实现。</p>
-<p><strong>浏览器的同源策略，限制了来自不同源的“document”或脚本，对当前“document”读取或设置某些属性。</strong></p>
-<p>例如下图就是Chrome的同源策略限制：</p>
-<p><img alt="Same Origin Policy" src="../../../img/Same-Origin-Policy-1.png" /></p>
-<p>这一策略是极其重要的，试想如果没有同源策略，可能 a.com 的一段 JavaScript 脚本，在 b.com 未曾加载此脚本时，也可以随意涂改 b.com 的页面（在浏览器的显示中）。为了不让浏览器的页面行为发生混乱，浏览器提出了“Origin”（源）这一概念，来自不同 Origin的对象无法互相干扰。
-对于JavaScript来说，以下情况被认为是同源与不同源的：</p>
-<table>
-<thead>
-<tr>
-<th>URL</th>
-<th>OutCome</th>
-<th>Reason</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>http://test.icehoney.me/test1.html</td>
-<td>Success</td>
-<td></td>
-</tr>
-<tr>
-<td>http://test.icehoney.me/dir1/test2.html</td>
-<td>Success</td>
-<td></td>
-</tr>
-<tr>
-<td>https://test.icehoney.me/secure.html</td>
-<td>Failure</td>
-<td>Different protocol</td>
-</tr>
-<tr>
-<td>http://test.icehoney.me:81/secure.html</td>
-<td>Failure</td>
-<td>Different port</td>
-</tr>
-<tr>
-<td>http://blog.icehoney.me/secure.html</td>
-<td>Failure</td>
-<td>Different host</td>
-</tr>
-</tbody>
-</table>
-<p>由上表可知，影响“源”的因素有：host（域名或IP地址，如果是IP地址则看做一个根域名）、子域名、端口、协议。</p>
-<p>需要注意的是，对于当前页面来说，页面内存放JavaScript文件的域并不重要，重要的是加载JavaScript页面所在的域是什么。</p>
-<p>例如，在 baidu.com上有以下代码：</p>
-<pre><code>    &lt;script src="http://google.com/ga.js"&gt;&lt;/script&gt;
+<h2 id="overview">Overview</h2>
+<p>ModSecurity supplies an array of request filtering and other security features to the Apache HTTP Server, IIS and NGINX. ModSecurity is a web application layer firewall. ModSecurity is free software released under the Apache license 2.0.</p>
+<p><img alt="ModSecurity" src="../../../img/modsecurity.png" /></p>
+<h2 id="_1">服务器环境</h2>
+<p>接下来简单介绍如何配置Apache2的ModSecurity模块，以在服务器层进行必要的安全防护措施。首先是我们部署的安装环境：</p>
+<pre><code>    OS：Ubuntu 14.04.1 LTS
+    Apache:  Apache/2.4.7 (Ubuntu)
 </code></pre>
-<p>baidu加载了google的ga.js，但是ga.js是运行在baidu.com页面中的，因此对于当前打开的页面(baidu.com页面)来说，ga.js的Origin就应该是baidu.com而非google.com。</p>
-<p>在浏览器中，<code>&lt;script&gt;、&lt;img&gt;、&lt;iframe&gt;、&lt;link&gt;</code>等标签都可以跨域加载资源，而不受同源策略的限制。这些带"src"属性的标签每次加载时，实际上是由浏览器发起了一次GET请求。不同于 XMLHttpRequest 的是，通过src属性加载的资源，浏览器限制了JavaScript的权限，使其不能读、写返回的内容。</p>
-<h2 id="ajax">AJAX</h2>
-<p>随着互联网的发展，对用户体验的要求越来越高，AJAX应用也就越发频繁，AJAX的本质就是 XMLHttpRequest。但 XMLHttpRequest 受到同源策略的约束，不能跨域访问资源，在AJAX应用的开发中尤其需要注意这一点。</p>
-<p>如果 XMLHttpRequest 能够跨域访问资源，则可能会导致一些敏感数据泄漏，例如CSRF的 token，从而导致发生安全问题。</p>
-<h2 id="_2">跨域解决方案</h2>
-<p>随着互联网越来越开放，跨越请求的需求也越来越迫切。因此 W3C 委员会指定了 XMLHttpRequest 跨域访问标准。它需要通过目标域返回的HTTP头来授权是否允许跨域访问，因为HTTP头对于JavaScript来说一般是无法控制的，所以认为这个方案是可以实施的。
-注意：这个跨域访问方案的安全基础就是信任“JavaScript无法控制该HTTP头”，如果此信任基础被打破，则此方案也将不再安全。</p>
-<p><img alt="Cross Origin" src="../../../img/Same-Origin-Policy-2.png" /></p>
-<p>由上图可以看出在页面<code>http://pan.baidu.com/disk/home</code> 向URL <code>http://localhost:6800/jsonrpc?tm=1428134320921</code> 发起了一次POST请求，
-这时并没有因为同源策略而遭到限制，因为在 Response Headers里面有一条: <code>Access-Control-Allow-Origin:*</code> 这句话声明了目标网址接受来自任何网址
-的跨域请求，所以浏览器允许了此次跨域请求。</p>
-<h2 id="_3">总结</h2>
-<p>对于浏览器来说，除了DOM、Cookie、XMLHttpRequest 会受到同源策略的限制外，浏览器加载的一些第三方插件也有各自的同源策略。最常见的一些插件如 Flash、Java Applet、Silverlight、Google Gears等都有自己的控制策略。</p>
-<p>浏览器的同源策略是浏览器安全的基础，同源策略一旦出现漏洞被绕过，也将带来非常严重的后果，很多基于同源策略制定的安全方案都将失去效果。</p>
+<h2 id="modsecurity">安装ModSecurity及其依赖</h2>
+<pre><code>    # apt-get install libxml2 libxml2-dev libxml2-utils libaprutil1 libaprutil1-dev libapache2-modsecurity
+</code></pre>
+<p>可以查看一下版本号，确认是 2.7版本：</p>
+<pre><code>    # dpkg -s libapache2-modsecurity | grep Version
+</code></pre>
+<h2 id="modsecurity_1">配置ModSecurity</h2>
+<pre><code>    # cd /etc/modsecurity/
+    # cp modsecurity.conf-recommended modsecurity.conf
+    # vim modsecurity.conf
+</code></pre>
+<p>在第七行修改为：</p>
+<pre><code>    SecRuleEngine On
+</code></pre>
+<h2 id="_2">启用核心规则集</h2>
+<p>把需要使用的规则集放在以下目录中：</p>
+<pre><code>    # cd /usr/share/modsecurity-crs/activated_rules/
+</code></pre>
+<p>启用base规则集：</p>
+<pre><code>    # for f in $(ls ../base_rules/); do ln -s ../base_rules/$f; done
+</code></pre>
+<p>你也可以启用其它规则集，但是要注意对于不同的规则集可能需要启动特定的模块。</p>
+<p>然后修改Apache2的模块配置，启用规则集：</p>
+<pre><code>    # vim /etc/apache2/mods-available/security2.conf
+</code></pre>
+<p>修改为：</p>
+<pre><code>    &lt;IfModule security2_module&gt;        
+    # Default Debian dir for modsecurity's persistent data        
+    SecDataDir /var/cache/modsecurity        
+    # Include all the *.conf files in /etc/modsecurity.        
+    # Keeping your local configuration in that directory        
+    # will allow for an easy upgrade of THIS file and        
+    # make your life easier        
+    IncludeOptional /etc/modsecurity/*.conf        
+    IncludeOptional /usr/share/modsecurity-crs/*.conf        
+    IncludeOptional /usr/share/modsecurity-crs/activated_rules/*.conf
+    &lt;/IfModule&gt;
+</code></pre>
+<h2 id="modsecurity_2">启用ModSecurity模块</h2>
+<pre><code>    # a2enmod headers
+    # a2enmod security2 
+    # service apache2 restart
+</code></pre>
+<h2 id="_3">配置效果</h2>
+<p>在登录页面输入 SQL 注入语句： </p>
+<pre><code>    abcd ' or 1=1 #
+</code></pre>
+<p><img alt="Login" src="../../../img/waf-1.png" /></p>
+<p>点击登录可以发现，Apache服务器直接提示403 Forbiddden 错误：</p>
+<p><img alt="Login" src="../../../img/waf-2.png" /></p>
+<p>查看日志可以知道具体的拦截情况：</p>
+<pre><code>        # cat /var/log/apache2/modsec_audit.log
+
+        Message: Access denied with code 403 (phase 2). Pattern match "(?i:([\\s'\"`\xc2\xb4\xe2\x80\x99\xe2\x80\x98\\(\\)]*?)\\b([\\d\\w]++)([\\s'\"`\xc2\xb4\xe2\x80\x99\xe2\x80\x98\\(\\)]*?)(?:(?:=|&lt;=&gt;|r?like|sounds\\s+like|regexp)([\\s'\"`\xc2\xb4\xe2\x80\x99\xe2\x80\x98\\(\\)]*?)\\2\\b|(?:!=|&lt;=|&gt;=|&lt;&gt;|&lt;|&gt;|\\^|is\\s+not ..." at ARGS:login_username. [file "/usr/share/modsecurity-crs/activated_rules/modsecurity_crs_41_sql_injection_attacks.conf"] [line "77"] [id "950901"] [rev "2"] [msg "SQL Injection Attack: SQL Tautology Detected."] [data "Matched Data:  1=1 found within ARGS:login_username: abcd ' or 1=1 #"] [severity "CRITICAL"] [ver "OWASP_CRS/2.2.8"] [maturity "9"] [accuracy "8"] [tag "OWASP_CRS/WEB_ATTACK/SQL_INJECTION"] [tag "WASCTC/WASC-19"] [tag "OWASP_TOP_10/A1"] [tag "OWASP_AppSensor/CIE1"] [tag "PCI/6.5.2"]
+        Action: Intercepted (phase 2)
+        Apache-Handler: application/x-httpd-php
+        Stopwatch: 1432371734022213 3540 (- - -)
+        Stopwatch2: 1432371734022213 3540; combined=2202, p1=1194, p2=927, p3=0, p4=0, p5=80, sr=100, sw=1, l=0, gc=0
+        Response-Body-Transformed: Dechunked
+        Producer: ModSecurity for Apache/2.7.7 (http://www.modsecurity.org/); OWASP_CRS/2.2.8.
+        Server: Apache/2.4.7 (Ubuntu)
+        Engine-Mode: "ENABLED"
+</code></pre>
 </div>
         </div>
         <footer class="footer col-md-12">

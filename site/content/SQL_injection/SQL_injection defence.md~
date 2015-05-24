@@ -14,19 +14,17 @@ Structured Query Language Injection
 （1）应用程序指定查询结构，为用户输入的每个数据预留占位符。  
 （2）应用程序指定每个占位符的内容。  
 不安全查询和相应的参数化查询的对比：  
-
-		String queryText = "select ename,sal from emp where ename = '"  
-		queryText += request.getParameter("name");  
-		queryText +="'";  
-		stmt = con.createStatement();  
-		rs = stmt.executeQuery(querytext);  
+String queryText = "select ename,sal from emp where ename = '"  
+queryText += request.getParameter("name");  
+queryText +="'";  
+stmt = con.createStatement();  
+rs = stmt.executeQuery(querytext);  
 
 上述代码中，用户提交的name参数被直接嵌入到一个SQL语句中，致使应用程序易受SQL注入。  
-
-		String queryText = "SELECT ename,sal FROM EMP WHERE ename = ?"  
-		stmt = con.prepareStatement(queryText);  
-		stmt.setString(1,request.getParameter("name"));  
-		rs = stmt.executeQuery();  
+String queryText = "SELECT ename,sal FROM EMP WHERE ename = ?"  
+stmt = con.prepareStatement(queryText);  
+stmt.setString(1,request.getParameter("name"));  
+rs = stmt.executeQuery();  
 
 上述代码使用一个问号作为用户提交参数的占位符，以确定查询的结构。随后，代码调用prepareStatement方法解释了这个参数，并确定将要执行的查询结构。之后，它使用setString方法指定参数的实际值。由于查询的结构已经固定，这个值可为任何数据类型，而不会影响查询的结构。
 

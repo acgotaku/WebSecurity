@@ -51,7 +51,7 @@ Click Jacking Injection
 
 ##二、X-Frame-Options  
 X-Frame-Options HTTP 响应头，可以指示浏览器是否应该加载一个iframe中的页面。网站可以通过设置X-Frame-Options阻止站点内的页面被其他页面嵌入从而防止点击劫持。  
-###X-FRAME-OPTIONS  
+1、X-FRAME-OPTIONS  
 X-Frame-Options共有三个值：  
 DENY  
 任何页面都不能被嵌入到iframe或者frame中。  
@@ -60,30 +60,34 @@ SAMEORIGIN
 ALLOW-FROM URI  
 页面自能被指定的Uri嵌入到iframe或frame中。  
 
-###APACHE配置X-FRAME-OPTIONS  
+2、APACHE配置X-FRAME-OPTIONS  
 在站点配置文件httpd.conf中添加如下配置，限制只有站点内的页面才可以嵌入iframe。  
 Header always append X-Frame-Options SAMEORIGIN  
 配置之后重启apache使其生效。该配置方式对IBM HTTP Server同样适用。  
 如果同一apache服务器上有多个站点，只想针对一个站点进行配置，可以修改.htaccess文件，添加如下内容：  
 Header append X-FRAME-OPTIONS "SAMEORIGIN"  
 
-###NGINX 配置X-FRAME-OPTIONS  
+3、NGINX 配置X-FRAME-OPTIONS  
 到 nginx/conf文件夹下，修改nginx.conf ，添加如下内容：  
 add_header X-Frame-Options "SAMEORIGIN";  
 重启Nginx服务。  
 
-###IIS配置X-FRAME-OPTIONS  
+4、IIS配置X-FRAME-OPTIONS  
 在web站点的web.config中配置：  
   
 		<system.webServer>  
 
 		 ...
-
 			<httpProtocol>
-			<customHeaders>
+
+  			<customHeaders>
+
 			<add name="X-Frame-Options" value="SAMEORIGIN" />  
+
 			</customHeaders>  
+
 			</httpProtocol>  
-		... 
+
+		...  
 
 		</system.webServer>  

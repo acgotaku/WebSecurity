@@ -108,6 +108,10 @@
                             <a href="../../Web_Server_Sercurity/Web-Server-Sercurity">Web Server Sercurity</a>
                         </li>
                     
+                        <li >
+                            <a href="../../Web_Server_Sercurity/Apache2-WAF">Apache2 ModSecurity</a>
+                        </li>
+                    
                     </ul>
                 </li>
             
@@ -234,10 +238,6 @@
                             <a href="../../Access_Control/RBAC">RBAC</a>
                         </li>
                     
-                        <li >
-                            <a href="../../Access_Control/Perform">Perform</a>
-                        </li>
-                    
                     </ul>
                 </li>
             
@@ -279,8 +279,9 @@
     
         <li class="main active"><a href="#csrf">CSRF实验</a></li>
         
-    
-        <li class="main "><a href="#_1">攻击介绍</a></li>
+            <li><a href="#_1">攻击满足条件</a></li>
+        
+            <li><a href="#_2">攻击介绍</a></li>
         
     
     </ul>
@@ -288,13 +289,14 @@
             <div class="col-md-9" role="main"><h2 id="csrf">CSRF实验</h2>
 <hr />
 <p>实验环境：<a href="http://css.csail.mit.edu/6.858/2014/schedule.html">MIT6.858实验</a>  Lab 5: Browser security</p>
-<p>受害者登陆myzoo.com.</p>
+<h3 id="_1">攻击满足条件</h3>
+<p>1、受害者登陆myzoo.com.</p>
 <p><img alt="login" src="../../../img/login.png" /></p>
-<p>受害者在没有登出的情况下访问攻击网站evil1.com.</p>
-<p><img alt="browse" src="../../../img/evil.png" /></p>
-<p>前面两步已经满足了CSRF攻击的条件，所以结果就是攻击实现,用户网站内部zoobars丢失。</p>
+<p>2、受害者在没有登出的情况下访问攻击网站evil1.com.</p>
+<p><img alt="browse" src="../../../img/browse.png" /></p>
+<p>根据CSRF攻击实现所满足的两个条件，前面两步的执行已经满足条件，结果就是攻击实现,相应的后果就是用户网站内部zoobars丢失。</p>
 <p><img alt="attack" src="../../../img/attack.png" /></p>
-<h2 id="_1">攻击介绍</h2>
+<h3 id="_2">攻击介绍</h3>
 <p>下面查看myzoo.com网站中transfer页面源码。</p>
 <p><img alt="transfer" src="../../../img/myzoo.png" /></p>
 <p>然后根据transfer页面中的代码伪造一个form表单，内容同transform动作一一对应。为了在攻击网站中隐藏这个form表单，所以创建一个iframe，将其设置为隐藏，最后设置form表单中的target指向这个表单。</p>
