@@ -22,3 +22,36 @@ table>thead>tr>th, table>tbody>tr>th, table>tfoot>tr>th, table>thead>tr>td, tabl
 p{
     text-indent: 2em;
 }
+@media (max-width: 1299px){
+    .navbar-toggle {
+    display: block;
+    }
+    .navbar-collapse.collapse {
+    display: none!important;
+    }
+    .navbar-header {
+    float: none;
+    }
+    .navbar-nav,.navbar-nav>li{
+    float: none;
+    }
+    .navbar-collapse.in {
+    overflow-y: auto!important;
+    }
+    .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    color: #fff;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover, .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: #fff;
+    background-color: #97310e;
+    }
+}

@@ -129,8 +129,9 @@ hr {
 }
 
 @media (min-width: 1300px){
-.navbar>.container{
+    .navbar>.container{
     padding: 0px;
     width: 1300px;
     }
 }
+
