@@ -13,6 +13,9 @@ h1{
 h2,h3{
     font-size: 40px;
 }
+.disabled{
+    cursor: not-allowed;
+}
 div.col.s12.m9 ul li{
     list-style-type: disc;
     margin-left: 40px;

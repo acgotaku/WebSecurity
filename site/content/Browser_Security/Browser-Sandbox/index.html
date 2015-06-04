@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
         
         
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-       <title>Browser Sandbox - Web Security - Web Security</title>
+        <title>Browser Sandbox - Web Security - Web Security</title>
 
-        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../../css/highlight.css">
-        <link href="../../../css/base.css" rel="stylesheet">
-        <link href="../../../css/extra.css" rel="stylesheet">
+        <link href="../../../css/prism.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../../../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../../../css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -27,255 +25,283 @@
 
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+        <div class="navbar-fixed">
+<nav class="blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+    <a id="logo-container" href="../../.." class="brand-logo center">Web Security</a>
+    <ul class="right hide-on-med-and-down">
+        <li >
+            <a rel="next" href="../Same-Origin-Policy">
+                <i class="mdi-hardware-keyboard-arrow-left left"></i> Previous
+            </a>
+        </li>
+        <li >
+            <a rel="prev" href="../Malicious-URL-interception">
+                Next <i class="mdi-hardware-keyboard-arrow-right right"></i>
+            </a>
+        </li>
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <!-- Main title -->
-            <a class="navbar-brand" href="../../..">Web Security</a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">XSS <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
+      </ul>
+    <ul id="slide-out" class="side-nav">
+    
+    
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+            <li>
+                <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal">XSS</a>
+                <div class="collapsible-body">
+                    <ul>
                     
                         <li >
-                            <a href="../../XSS/Overview">XSS</a>
+                            <a href="../../XSS/Overview" class="truncate">XSS</a>
                         </li>
                     
                         <li >
-                            <a href="../../XSS/XSS-Cookie">Stealing Cookie With XSS</a>
+                            <a href="../../XSS/XSS-Cookie" class="truncate">Stealing Cookie With XSS</a>
                         </li>
                     
                         <li >
-                            <a href="../../XSS/CSS-history-hack">CSS History Hack</a>
+                            <a href="../../XSS/CSS-history-hack" class="truncate">CSS History Hack</a>
                         </li>
                     
                         <li >
-                            <a href="../../XSS/XSS-Worm">XSS Worm</a>
+                            <a href="../../XSS/XSS-Worm" class="truncate">XSS Worm</a>
                         </li>
                     
                         <li >
-                            <a href="../../XSS/XSS-Defense">XSS Defense</a>
+                            <a href="../../XSS/XSS-Defense" class="truncate">XSS Defense</a>
                         </li>
                     
                     </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browser Security <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                </div>
+            </li>
+            </ul>
+        </li>
+    
+    
+    
+        <li class="no-padding active">
+            <ul class="collapsible collapsible-accordion">
+            <li>
+                <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal">Browser Security</a>
+                <div class="collapsible-body">
+                    <ul>
                     
                         <li >
-                            <a href="../Same-Origin-Policy">Same Origin Policy</a>
+                            <a href="../Same-Origin-Policy" class="truncate">Same Origin Policy</a>
                         </li>
                     
                         <li class="active">
-                            <a href=".">Browser Sandbox</a>
+                            <a href="." class="truncate">Browser Sandbox</a>
                         </li>
                     
                         <li >
-                            <a href="../Malicious-URL-interception">Malicious URL interception</a>
+                            <a href="../Malicious-URL-interception" class="truncate">Malicious URL interception</a>
                         </li>
                     
                     </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web服务配置安全 <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../Web_Server_Sercurity/Web-Server-Sercurity">Web Server Sercurity</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../Web_Server_Sercurity/Apache2-WAF">Apache2 ModSecurity</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SQL_injection <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../SQL_injection/Overview">Overview</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../SQL_injection/SQL_injection">SQL_injection</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../SQL_injection/SQL_injection_defence">SQL_injection defence</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clickjacking <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../Clickjacking/Overview">Overview</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../Clickjacking/Click_Jacking">Click_Jacking</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../Clickjacking/Click_Jacking_defence">Click Jacking defence</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">CSRF <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../CSRF/Overview">CSRF</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../CSRF/CSRF_Attack">CSRF Attack</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../CSRF/CSRF_Defense">CSRF Defense</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web框架安全 <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../Web_framework/Overview">Web框架安全概述</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../Web_framework/XSS">模板引擎与XSS防御</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../Web_framework/csrf">Web框架与CSRF防御</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">拒绝服务攻击 <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../DOS/Overviewed">DOS攻击原理</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../DOS/general-dos">通用的DoS攻击技术</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Access_Control <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../Access_Control/Overview">Access_Control</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../Access_Control/DAC">DAC</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../Access_Control/MAC">MAC</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../Access_Control/RBAC">RBAC</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
+                </div>
+            </li>
             </ul>
+        </li>
+    
+    
+    
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+            <li>
+                <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal">Web服务配置安全</a>
+                <div class="collapsible-body">
+                    <ul>
+                    
+                        <li >
+                            <a href="../../Web_Server_Sercurity/Web-Server-Sercurity" class="truncate">Web Server Sercurity</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_Server_Sercurity/Apache2-WAF" class="truncate">Apache2 ModSecurity</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </li>
+            </ul>
+        </li>
+    
+    
+    
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+            <li>
+                <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal">SQL_injection</a>
+                <div class="collapsible-body">
+                    <ul>
+                    
+                        <li >
+                            <a href="../../SQL_injection/Overview" class="truncate">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../SQL_injection/SQL_injection" class="truncate">SQL_injection</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../SQL_injection/SQL_injection_defence" class="truncate">SQL_injection defence</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </li>
+            </ul>
+        </li>
+    
+    
+    
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+            <li>
+                <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal">Clickjacking</a>
+                <div class="collapsible-body">
+                    <ul>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Overview" class="truncate">Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Click_Jacking" class="truncate">Click_Jacking</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Clickjacking/Click_Jacking_defence" class="truncate">Click Jacking defence</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </li>
+            </ul>
+        </li>
+    
+    
+    
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+            <li>
+                <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal">CSRF</a>
+                <div class="collapsible-body">
+                    <ul>
+                    
+                        <li >
+                            <a href="../../CSRF/Overview" class="truncate">CSRF</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Attack" class="truncate">CSRF Attack</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../CSRF/CSRF_Defense" class="truncate">CSRF Defense</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </li>
+            </ul>
+        </li>
+    
+    
+    
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+            <li>
+                <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal">Web框架安全</a>
+                <div class="collapsible-body">
+                    <ul>
+                    
+                        <li >
+                            <a href="../../Web_framework/Overview" class="truncate">Web框架安全概述</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_framework/XSS" class="truncate">模板引擎与XSS防御</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Web_framework/csrf" class="truncate">Web框架与CSRF防御</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </li>
+            </ul>
+        </li>
+    
+    
+    
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+            <li>
+                <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal">拒绝服务攻击</a>
+                <div class="collapsible-body">
+                    <ul>
+                    
+                        <li >
+                            <a href="../../DOS/Overviewed" class="truncate">DOS攻击原理</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../DOS/general-dos" class="truncate">通用的DoS攻击技术</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </li>
+            </ul>
+        </li>
+    
+    
+    
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+            <li>
+                <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal">Access_Control</a>
+                <div class="collapsible-body">
+                    <ul>
+                    
+                        <li >
+                            <a href="../../Access_Control/Overview" class="truncate">Access_Control</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/DAC" class="truncate">DAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/MAC" class="truncate">MAC</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../Access_Control/RBAC" class="truncate">RBAC</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </li>
+            </ul>
+        </li>
+    
+    
 
-            <!-- Search, Navigation and Repo links -->
-            <!--
-            <ul class="nav navbar-nav navbar-right">
-                <li >
-                    <a rel="next" href="../Same-Origin-Policy">
-                        <i class="fa fa-arrow-left"></i> Previous
-                    </a>
-                </li>
-                <li >
-                    <a rel="prev" href="../Malicious-URL-interception">
-                        Next <i class="fa fa-arrow-right"></i>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://github.com/acgotaku/WebSecurity">
-                        
-                            <i class="fa fa-github"></i>
-                        
-                        GitHub
-                    </a>
-                </li>
-                
-            </ul>
-            -->
-        </div>
+    </ul>
+      <a href="javascript:void(0)" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
     </div>
+  </nav>
 </div>
 
         <div class="container">
-            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
+            <div class="row">
+                <div class="col s12 m3"><div class="hide-on-small-only index">
+  <ul class="section table-of-contents">
     
         <li class="main active"><a href="#browser-sandbox">Browser Sandbox</a></li>
         
@@ -286,9 +312,9 @@
             <li><a href="#sandbox">Sandbox</a></li>
         
     
-    </ul>
+  </ul>
 </div></div>
-            <div class="col-md-9" role="main"><h1 id="browser-sandbox">Browser Sandbox</h1>
+                <div class="col s12 m9" role="main"><h1 id="browser-sandbox">Browser Sandbox</h1>
 <p>浏览器沙箱</p>
 <hr />
 <h2 id="_1">基本介绍</h2>
@@ -307,17 +333,21 @@
 <p><img alt="Google Sandbox" src="../../../img/Sandbox-1.png" /></p>
 <p>浏览器安全是一个整体，在现今的浏览器中，虽然有很多进程架构和 Sandbox的保护，但是浏览器所加载的一些第三方插件却往往不受 Sandbox 管辖。近年来的浏览器漏洞往往都是由于加载的第三方插件出现安全漏洞导致的。</p>
 </div>
+            </div>
         </div>
-        <footer class="footer col-md-12">
-            <hr>
-            
-                <p>Copyright &copy; 2015, <a href="https://github.com/acgotaku/WebSecurity">CSS WebSecurity</a>.</p>
-            
+        <footer  class="page-footer transparent">
+    <div class="footer-copyright">
+      <div class="container center">
+        
+            <span>Copyright &copy; 2015, <a href="https://github.com/acgotaku/WebSecurity">CSS WebSecurity</a>.</span>
+        
+      </div>
+    </div>
         </footer>
 
-        <script src="../../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../../js/highlight.pack.js"></script>
-        <script src="../../../js/base.js"></script>
+        <script src="../../../js/jquery-2.1.1.min.js"></script>
+        <script src="../../../js/prism.js"></script>
+        <script src="../../../js/materialize.js"></script>
+        <script src="../../../js/init.js"></script>
     </body>
 </html>
