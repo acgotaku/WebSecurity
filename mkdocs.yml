@@ -33,6 +33,6 @@ pages:
 - ['content/Access_Control/RBAC.md', 'Access_Control', 'RBAC']
 
 
-theme_dir: 'orange'
+theme_dir: 'material'
 repo_url: https://github.com/acgotaku/WebSecurity
 copyright: Copyright &copy; 2015, <a href="https://github.com/acgotaku/WebSecurity">CSS WebSecurity</a>.

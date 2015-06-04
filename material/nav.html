@@ -1,0 +1,48 @@
+<div class="navbar-fixed">
+<nav class="blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+    <a id="logo-container" href="{{ homepage_url }}" class="brand-logo center">{{ site_name }}</a>
+    <ul class="right hide-on-med-and-down">
+        <li {% if not previous_page %}class="disabled"{% endif %}>
+            <a rel="next" {% if previous_page %}href="{{ previous_page.url }}"{% endif %}>
+                <i class="mdi-hardware-keyboard-arrow-left left"></i> Previous
+            </a>
+        </li>
+        <li {% if not next_page %}class="disabled"{% endif %}>
+            <a rel="prev" {% if next_page %}href="{{ next_page.url }}"{% endif %}>
+                Next <i class="mdi-hardware-keyboard-arrow-right right"></i>
+            </a>
+        </li>
+
+      </ul>
+    <ul id="slide-out" class="side-nav">
+    {% for nav_item in nav %}
+    {% if nav_item.children %}
+        <li class="no-padding{% if nav_item.active %} active{% endif %}">
+            <ul class="collapsible collapsible-accordion">
+            <li>
+                <a href="javascript:void(0)" class="collapsible-header waves-effect waves-teal">{{ nav_item.title }}</a>
+                <div class="collapsible-body">
+                    <ul>
+                    {% for nav_item in nav_item.children %}
+                        <li {% if nav_item.active %}class="active"{% endif %}>
+                            <a href="{{ nav_item.url }}" class="truncate">{{ nav_item.title }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </li>
+            </ul>
+        </li>
+    {% else %}
+        <li {% if nav_item.active %}class="active"{% endif %}>
+            <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+        </li>
+    {% endif %}
+    {% endfor %}
+
+    </ul>
+      <a href="javascript:void(0)" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
+    </div>
+  </nav>
+</div>

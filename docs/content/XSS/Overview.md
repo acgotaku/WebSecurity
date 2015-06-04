@@ -20,6 +20,8 @@ Cross-Site Scripting
 
 ##XSS的分类
 
+---
+
 ##反射型XSS
 
 反射型跨站脚本（Reflected Cross-site Scripting）也称作非持久型、参数型跨站脚本。这种类型的跨站脚本是最常见，也是使用最广的一种，

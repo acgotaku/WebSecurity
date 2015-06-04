@@ -54,6 +54,7 @@ Structured Query Language Injection
 点击“login”之后获取之前用户注册跳转的界面。  
 
 ##不同语句类型的注入
+---
 
 ###SELCET语句  
 作用：从数据库中获取信息。  
@@ -73,6 +74,8 @@ Structured Query Language Injection
 
 
 ##SQL注入漏洞类型
+
+---
 
 ###注入字符串数据  
 若SQL查询合并用户提交的数据，它会将这些数据包含在单引号中。为利用任何SQL注入漏洞，则需摆脱这些引号的束缚。
