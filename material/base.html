@@ -16,17 +16,9 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-        <script>
-          var cb = function() {
-            var l = document.createElement('link'); l.rel = 'stylesheet';
-            l.href = '{{ base_url }}/css/main.css';
-            var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
-          };
-          var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-              webkitRequestAnimationFrame || msRequestAnimationFrame;
-          if (raf) raf(cb);
-          else window.addEventListener('load', cb);
-        </script>
+        <link href="{{ base_url }}/css/prism.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="{{ base_url }}/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="{{ base_url }}/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         {%- for path in extra_css %}
         <link href="{{ path }}" rel="stylesheet">
         {%- endfor %}
